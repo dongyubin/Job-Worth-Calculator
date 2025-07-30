@@ -1,57 +1,83 @@
 'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
 import { Globe } from 'lucide-react'
 
 interface LanguageSelectorProps {
   currentLocale: string
-  onLocaleChange: (locale: string) => void
+  supportedLocales: string[]
+  languageNames: Record<string, string>
+  type: 'desktop' | 'mobile'
+  onClose?: () => void // For mobile menu
 }
 
-export function LanguageSelector({ currentLocale, onLocaleChange }: LanguageSelectorProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const languages = [
-    { code: 'zh', name: '中文', flag: '🇨🇳' },
-    { code: 'en', name: 'English', flag: '🇺🇸' },
-    { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  ]
-
-  const currentLanguage = languages.find(lang => lang.code === currentLocale)
-
-  return (
-    <div className="fixed top-4 right-4 z-50">
-      <div className="relative">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg px-3 py-2 hover:bg-white transition-colors shadow-sm"
-        >
+export function LanguageSelector({
+  currentLocale,
+  supportedLocales,
+  languageNames,
+  type,
+  onClose,
+}: LanguageSelectorProps) {
+  if (type === 'desktop') {
+    return (
+      <div className="relative group">
+        <button className="flex items-center gap-2 px-3 py-2 text-sm text-[hsl(var(--muted-foreground))] 
+                         hover:text-[hsl(var(--foreground))] transition-colors duration-300 rounded-lg 
+                         hover:bg-[hsl(var(--accent))]/50">
           <Globe className="w-4 h-4" />
-          <span className="text-sm font-medium">
-            {currentLanguage?.flag} {currentLanguage?.name}
-          </span>
+          <span>{languageNames[currentLocale] || currentLocale.toUpperCase()}</span>
         </button>
-
-        {isOpen && (
-          <div className="absolute top-full mt-1 right-0 bg-white border border-gray-200 rounded-lg shadow-lg min-w-[120px] overflow-hidden">
-            {languages.map((language) => (
-              <button
-                key={language.code}
-                onClick={() => {
-                  onLocaleChange(language.code)
-                  setIsOpen(false)
-                }}
-                className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors flex items-center gap-2 ${
-                  currentLocale === language.code ? 'bg-primary-50 text-primary-600' : ''
-                }`}
-              >
-                <span>{language.flag}</span>
-                <span>{language.name}</span>
-              </button>
-            ))}
-          </div>
-        )}
+        
+        <div className="absolute top-full right-0 mt-2 py-2 min-w-[120px] bg-[hsl(var(--background))]/95 
+                      backdrop-blur-md border border-[hsl(var(--border))]/50 rounded-xl shadow-lg 
+                      opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition-all duration-300 z-50">
+          {supportedLocales.map((locale) => (
+            <Link
+              key={locale}
+              href={`/${locale}`}
+              replace
+              className={`block w-full px-4 py-2 text-left text-sm transition-colors duration-200 
+                        hover:bg-[hsl(var(--accent))]/50 ${
+                currentLocale === locale 
+                  ? 'text-[hsl(var(--primary))] bg-[hsl(var(--primary))]/10' 
+                  : 'text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))]'
+              }`}
+            >
+              {languageNames[locale] || locale.toUpperCase()}
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+
+  if (type === 'mobile') {
+    return (
+      <div className="px-4 py-3 border-t border-[hsl(var(--border))]/50">
+        <div className="text-sm text-[hsl(var(--muted-foreground))] mb-3">
+          选择语言 / Language
+        </div>
+        <div className="flex gap-2 flex-wrap">
+          {supportedLocales.map((locale) => (
+            <Link
+              key={locale}
+              href={`/${locale}`}
+              replace
+              onClick={onClose}
+              className={`flex-1 min-w-[80px] px-4 py-2 text-sm rounded-lg transition-all duration-200 text-center ${
+                currentLocale === locale
+                  ? 'bg-[hsl(var(--primary))] text-white'
+                  : 'bg-[hsl(var(--accent))]/50 text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--accent))]'
+              }`}
+            >
+              {languageNames[locale] || locale.toUpperCase()}
+            </Link>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  return null
 }
