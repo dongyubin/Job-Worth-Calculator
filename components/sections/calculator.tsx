@@ -11,7 +11,7 @@ interface CalculatorProps {
 
 export function Calculator({ messages, locale, config }: CalculatorProps) {
   return (
-    <section id="calculator" className="pt-24 pb-8">
+    <section id="calculator" className="pt-24 pb-24">
       <SalaryCalculator />
     </section>
   )
