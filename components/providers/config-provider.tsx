@@ -3,6 +3,9 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 
 export interface SiteConfig {
+  locales?: string[]
+  baseUrl?: string
+  metadata?: Record<string, any>
   meta: {
     title: string
     description: string

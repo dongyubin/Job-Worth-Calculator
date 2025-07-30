@@ -23,8 +23,8 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
     'ja': '日本語'
   }
 
-  // 从 siteConfig 获取支持的语言列表
-  const supportedLocales = siteConfig?.locales || ['zh', 'en']
+  // 从 siteConfig 获取支持的语言列表，如果不存在则使用默认值
+  const supportedLocales = siteConfig?.locales || ['zh', 'en', 'ja']
 
   const navigation = [
     { name: messages.nav.home, href: '#calculator' },
