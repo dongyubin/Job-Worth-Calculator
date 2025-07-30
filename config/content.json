@@ -1,0 +1,192 @@
+{
+  "sections": {
+    "navbar": { "enabled": true },
+    "hero": { "enabled": false },
+    "calculator": { "enabled": true },
+    "sponsors": { "enabled": false },
+    "benefits": { "enabled": false },
+    "features": { "enabled": false },
+    "testimonials": { "enabled": false },
+    "team": { "enabled": false },
+    "community": { "enabled": false },
+    "showcase": { "enabled": false },
+    "pricing": { "enabled": false },
+    "faq": { "enabled": true },
+    "services": { "enabled": false },
+    "contact": { "enabled": false },
+    "acknowledgments": { "enabled": true },
+    "footer": { "enabled": true }
+  },
+  "hero": {
+    "ctaLink": "#features",
+    "secondaryCtaLink": "#showcase",
+    "backgroundImage": "/assets/images/hero-bg.jpg",
+    "heroImage": "/assets/images/hero-product.png"
+  },
+  "sponsors": {
+    "logos": [
+      { "name": "Company 1", "image": "/assets/images/sponsor1.png" },
+      { "name": "Company 2", "image": "/assets/images/sponsor2.png" },
+      { "name": "Company 3", "image": "/assets/images/sponsor3.png" },
+      { "name": "Company 4", "image": "/assets/images/sponsor4.png" }
+    ]
+  },
+  "benefits": {
+    "items": [
+      { "icon": "🚀" },
+      { "icon": "💰" },
+      { "icon": "📈" }
+    ]
+  },
+  "features": {
+    "items": [
+      { "icon": "⚡" },
+      { "icon": "🔒" },
+      { "icon": "🌐" },
+      { "icon": "📱" },
+      { "icon": "🔧" },
+      { "icon": "🎯" }
+    ]
+  },
+  "testimonials": {
+    "items": [
+      { "avatar": "/assets/images/avatar1.jpg" },
+      { "avatar": "/assets/images/avatar2.jpg" },
+      { "avatar": "/assets/images/avatar3.jpg" }
+    ]
+  },
+  "pricing": {
+    "plans": [
+      {
+        "ctaLink": "#signup",
+        "popular": false
+      },
+      {
+        "ctaLink": "#signup",
+        "popular": true
+      },
+      {
+        "ctaLink": "#contact",
+        "popular": false
+      }
+    ]
+  },
+  "showcase": {
+    "items": [
+      {
+        "title": "电商平台解决方案",
+        "description": "为大型电商企业构建的高性能、可扩展的在线购物平台",
+        "image": "/assets/images/showcase1.jpg",
+        "tags": ["React", "Next.js", "TypeScript"],
+        "link": "#"
+      },
+      {
+        "title": "企业管理系统",
+        "description": "一站式企业管理解决方案，提升企业运营效率",
+        "image": "/assets/images/showcase2.jpg", 
+        "tags": ["Node.js", "MongoDB", "AWS"],
+        "link": "#"
+      },
+      {
+        "title": "移动应用开发",
+        "description": "原生移动应用，提供优质的用户体验",
+        "image": "/assets/images/showcase3.jpg",
+        "tags": ["Vue.js", "Python", "Docker"],
+        "link": "#"
+      }
+    ],
+    "portfolioLink": "#"
+  },
+  "team": {
+    "members": [
+      {
+        "imageUrl": "https://i.pravatar.cc/250?img=58",
+        "firstName": "张",
+        "lastName": "明",
+        "positions": ["首席执行官", "产品战略专家"],
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/example"
+          },
+          {
+            "name": "Github", 
+            "url": "https://github.com/example"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/example"
+          }
+        ]
+      },
+      {
+        "imageUrl": "https://i.pravatar.cc/250?img=47",
+        "firstName": "李",
+        "lastName": "华", 
+        "positions": ["技术总监", "全栈架构师"],
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/example"
+          },
+          {
+            "name": "Github",
+            "url": "https://github.com/example"
+          }
+        ]
+      },
+      {
+        "imageUrl": "https://i.pravatar.cc/250?img=32",
+        "firstName": "王",
+        "lastName": "芳",
+        "positions": ["产品经理", "用户体验专家"],
+        "socialNetworks": [
+          {
+            "name": "LinkedIn", 
+            "url": "https://www.linkedin.com/in/example"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/example"
+          }
+        ]
+      }
+    ]
+  },
+  "community": {
+    "links": [
+      { "name": "Discord", "url": "https://discord.gg/example", "icon": "💬", "members": "10K+" },
+      { "name": "GitHub", "url": "https://github.com/example", "icon": "🐙", "members": "5K+" },
+      { "name": "Twitter", "url": "https://twitter.com/example", "icon": "🐦", "members": "15K+" },
+      { "name": "YouTube", "url": "https://youtube.com/example", "icon": "📺", "members": "8K+" }
+    ]
+  },
+  "services": {
+    "items": [
+      {
+        "title": "技术咨询",
+        "description": "专业的技术咨询，帮助您制定最佳解决方案",
+        "icon": "💡",
+        "features": ["需求分析", "技术选型", "架构设计", "性能优化"]
+      },
+      {
+        "title": "全栈开发",
+        "description": "全栈开发服务，从前端到后端一站式解决",
+        "icon": "⚡",
+        "features": ["前端开发", "后端开发", "数据库设计", "API集成"]
+      },
+      {
+        "title": "运维服务", 
+        "description": "7x24小时运维服务，确保系统稳定运行",
+        "icon": "🛡️",
+        "features": ["监控报警", "自动部署", "性能调优", "安全加固"]
+      },
+      {
+        "title": "技术培训",
+        "description": "专业的技术培训，提升团队技术能力", 
+        "icon": "🎓",
+        "features": ["技术培训", "代码审查", "最佳实践", "知识分享"]
+      }
+    ]
+  }
+}

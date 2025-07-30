@@ -1,0 +1,486 @@
+{
+  "hero": {
+    "title": "革新的なSaaSソリューション",
+    "subtitle": "企業のデジタル変革を支援し、運営効率を向上させます",
+    "description": "私たちのプラットフォームは、先進的なAI技術と直感的なユーザーインターフェースを統合し、チームがビジネスプロセスを簡単に管理し、生産性を向上させ、運営コストを削減できるようにします。",
+    "ctaText": "無料トライアル",
+    "secondaryCtaText": "デモを見る"
+  },
+  "sponsors": {
+    "title": "業界リーダーから信頼されています"
+  },
+  "benefits": {
+    "title": "なぜ私たちを選ぶのか？",
+    "subtitle": "ビジネスを際立たせる3つのコア優位性",
+    "items": [
+      {
+        "title": "効率向上",
+        "description": "ワークフローを自動化し、繰り返しタスクを削減し、チームがコアビジネスに集中できるようにします"
+      },
+      {
+        "title": "コスト削減",
+        "description": "リソース配分を最適化し、不要な支出を削減し、ROIを向上させます"
+      },
+      {
+        "title": "データ駆動",
+        "description": "リアルタイム分析とレポートで、情報に基づいたビジネス決定を支援します"
+      }
+    ]
+  },
+  "features": {
+    "title": "強力な機能特性",
+    "subtitle": "すべてのニーズを満たすワンストップソリューション",
+    "items": [
+      {
+        "title": "クイック展開",
+        "description": "複雑なIT設定不要で5分でセットアップ完了"
+      },
+      {
+        "title": "エンタープライズセキュリティ",
+        "description": "銀行レベルの暗号化でデータの完全なセキュリティを確保"
+      },
+      {
+        "title": "グローバル対応",
+        "description": "99.9%の稼働率とグローバルCDN加速"
+      },
+      {
+        "title": "モバイルフレンドリー",
+        "description": "すべてのデバイスとプラットフォームをサポートするレスポンシブデザイン"
+      },
+      {
+        "title": "カスタマイズ容易",
+        "description": "ビジネスニーズに適応する柔軟な設定オプション"
+      },
+      {
+        "title": "スマート分析",
+        "description": "AIドリブンな洞察でビジネスパフォーマンスの最適化を支援"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "顧客成功事例",
+    "subtitle": "お客様の声をご覧ください",
+    "items": [
+      {
+        "name": "田中太郎",
+        "position": "CEO",
+        "company": "テクノロジー企業A",
+        "content": "このプラットフォームを使用した後、作業効率が40%向上し、顧客満足度も大幅に向上しました。"
+      },
+      {
+        "name": "佐藤花子",
+        "position": "運営ディレクター",
+        "company": "企業B",
+        "content": "使いやすく、強力な機能で、ビジネスニーズを完全に満たしています。"
+      },
+      {
+        "name": "鈴木一郎",
+        "position": "創設者",
+        "company": "スタートアップC",
+        "content": "コストパフォーマンスが高く、開発コストを大幅に節約できました。"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "適切なプランを選択",
+    "subtitle": "あらゆる規模の企業に対応する柔軟な価格設定",
+    "popular": "最も人気",
+    "plans": [
+      {
+        "name": "ベーシック",
+        "price": "無料",
+        "period": "",
+        "description": "個人と小規模チームに最適",
+        "features": [
+          "最大5ユーザー",
+          "基本機能",
+          "メールサポート",
+          "5GBストレージ"
+        ],
+        "ctaText": "無料で始める"
+      },
+      {
+        "name": "プロフェッショナル",
+        "price": "¥9,900",
+        "period": "/月",
+        "description": "成長企業に最適",
+        "features": [
+          "最大50ユーザー",
+          "高度な機能",
+          "優先サポート",
+          "100GBストレージ",
+          "APIアクセス"
+        ],
+        "ctaText": "プロフェッショナルを選択"
+      },
+      {
+        "name": "エンタープライズ",
+        "price": "お問い合わせ",
+        "period": "",
+        "description": "大企業に最適",
+        "features": [
+          "無制限ユーザー",
+          "全機能",
+          "24/7専用サポート",
+          "無制限ストレージ",
+          "カスタム開発"
+        ],
+        "ctaText": "営業に連絡"
+      }
+    ]
+  },
+  "faq": {
+    "title": "よくある質問",
+    "subtitle": "仕事価値計算機についてのよくある疑問",
+    "items": [
+      {
+        "question": "この計算機の精度はどの程度ですか？",
+        "answer": "計算機は科学的な給与評価モデルに基づいており、給与、労働時間、環境要因など複数の次元を総合的に考慮しています。100%正確ではありませんが、客観的な参考データを提供できます。"
+      },
+      {
+        "question": "PPP購買力平価とは何ですか？",
+        "answer": "PPPは購買力平価指数で、異なる国の通貨の実際の購買力を比較するために使用されます。計算機はPPPデータを使用して、異なる国の給与を比較可能にします。"
+      },
+      {
+        "question": "データは保存されますか？",
+        "answer": "すべての計算はブラウザ内でローカルに実行され、データはサーバーにアップロードされません。履歴記録はブラウザにのみ保存され、プライバシーとセキュリティが確保されます。"
+      },
+      {
+        "question": "仕事価値スコアをどう理解すればよいですか？",
+        "answer": "スコアが高いほど仕事のコストパフォーマンスが良いことを示します。一般的に：0.6未満は最悪、0.6-1.0は悪い、1.0-1.8は普通、1.8-2.5は良い、2.5-3.2は素晴らしい、3.2-4.0は優秀、4.0以上は完璧です。"
+      },
+      {
+        "question": "どの国と地域がサポートされていますか？",
+        "answer": "現在、世界190カ国以上のPPPデータをサポートしており、主要な先進国と発展途上国をカバーしています。データソースは世界銀行などの権威ある機関です。"
+      },
+      {
+        "question": "計算結果を共有できますか？",
+        "answer": "はい！共有リンクを生成したり、画像として保存して、友人や同僚と仕事価値分析結果を共有できます。"
+      }
+    ]
+  },
+  "team": {
+    "title": "私たちのチーム",
+    "subtitle": "成功の背後にある優秀な人材をご紹介",
+    "members": [
+      {
+        "name": "田中明",
+        "firstName": "明",
+        "lastName": "田中",
+        "positions": ["最高経営責任者", "製品戦略専門家"],
+        "imageUrl": "https://i.pravatar.cc/250?img=58",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/tanakaming"
+          },
+          {
+            "name": "Github",
+            "url": "https://github.com/tanakaming"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/tanakaming"
+          }
+        ]
+      },
+      {
+        "name": "佐藤華",
+        "firstName": "華",
+        "lastName": "佐藤",
+        "positions": ["最高技術責任者", "フルスタックアーキテクト"],
+        "imageUrl": "https://i.pravatar.cc/250?img=47",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/satohana"
+          },
+          {
+            "name": "Github",
+            "url": "https://github.com/satohana"
+          }
+        ]
+      },
+      {
+        "name": "鈴木芳",
+        "firstName": "芳",
+        "lastName": "鈴木",
+        "positions": ["プロダクトマネージャー", "ユーザーエクスペリエンス専門家"],
+        "imageUrl": "https://i.pravatar.cc/250?img=32",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/suzukiyoshi"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/suzukiyoshi"
+          }
+        ]
+      },
+      {
+        "name": "山田強",
+        "firstName": "強",
+        "lastName": "山田",
+        "positions": ["最高財務責任者", "運営専門家"],
+        "imageUrl": "https://i.pravatar.cc/250?img=68",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/yamadatsuyoshi"
+          }
+        ]
+      }
+    ]
+  },
+  "community": {
+    "title": "コミュニティに参加",
+    "subtitle": "世界中の開発者と交流し、最新の製品動向と技術サポートを取得",
+    "joinText": "参加",
+    "ctaTitle": "準備はできましたか？",
+    "ctaSubtitle": "今すぐコミュニティに参加して、旅を始めましょう",
+    "ctaButton": "今すぐ参加",
+    "links": [
+      { "name": "Discord", "url": "https://discord.gg/yourcompany", "icon": "💬", "members": "10K+" },
+      { "name": "GitHub", "url": "https://github.com/yourcompany", "icon": "🐙", "members": "5K+" },
+      { "name": "Twitter", "url": "https://twitter.com/yourcompany", "icon": "🐦", "members": "15K+" },
+      { "name": "YouTube", "url": "https://youtube.com/yourcompany", "icon": "📺", "members": "8K+" }
+    ]
+  },
+  "showcase": {
+    "title": "プロジェクト紹介",
+    "subtitle": "優秀な作品と成功事例をご覧ください。お客様の目標達成をどのように支援するかを学びましょう",
+    "items": [
+      {
+        "title": "eコマースプラットフォームソリューション",
+        "description": "大型eコマース企業向けに構築された高性能でスケーラブルなオンラインショッピングプラットフォーム",
+        "image": "/assets/images/showcase1.jpg",
+        "tags": ["React", "Next.js", "TypeScript"],
+        "link": "#"
+      },
+      {
+        "title": "企業管理システム",
+        "description": "運営効率を向上させるワンストップ企業管理ソリューション",
+        "image": "/assets/images/showcase2.jpg",
+        "tags": ["Node.js", "MongoDB", "AWS"],
+        "link": "#"
+      },
+      {
+        "title": "モバイルアプリ開発",
+        "description": "優れたユーザーエクスペリエンスを提供するネイティブモバイルアプリケーション",
+        "image": "/assets/images/showcase3.jpg",
+        "tags": ["Vue.js", "Python", "Docker"],
+        "link": "#"
+      }
+    ],
+    "moreText": "もっとプロジェクトを見たいですか？",
+    "portfolioLink": "完全なポートフォリオを見る →"
+  },
+  "services": {
+    "title": "私たちのサービス",
+    "subtitle": "ビジネスの急速な発展を支援する包括的な技術サービスを提供",
+    "items": [
+      {
+        "title": "技術コンサルティング",
+        "description": "最適なソリューションの開発を支援するプロフェッショナルな技術コンサルティング",
+        "icon": "💡",
+        "features": ["要件分析", "技術選定", "アーキテクチャ設計", "パフォーマンス最適化"]
+      },
+      {
+        "title": "フルスタック開発",
+        "description": "フロントエンドからバックエンドまでのワンストップフルスタック開発サービス",
+        "icon": "⚡",
+        "features": ["フロントエンド開発", "バックエンド開発", "データベース設計", "API統合"]
+      },
+      {
+        "title": "運用サービス",
+        "description": "システムの安定稼働を確保する24時間体制の運用サービス",
+        "icon": "🛡️",
+        "features": ["監視アラート", "自動展開", "パフォーマンス調整", "セキュリティ強化"]
+      },
+      {
+        "title": "技術研修",
+        "description": "チームの技術能力向上のためのプロフェッショナルな技術研修",
+        "icon": "🎓",
+        "features": ["技術研修", "コードレビュー", "ベストプラクティス", "知識共有"]
+      }
+    ],
+    "learnMore": "詳細を見る",
+    "ctaTitle": "カスタマイズサービスが必要ですか？",
+    "ctaSubtitle": "お問い合わせいただき、専用ソリューションを取得",
+    "ctaButton": "今すぐ相談"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問はありますか？いつでもお手伝いします",
+    "email": "メール",
+    "phone": "電話",
+    "address": "住所",
+    "name": "お名前",
+    "email_placeholder": "メールアドレス",
+    "message": "メッセージ",
+    "send": "メッセージを送信"
+  },
+  "footer": {
+    "product": "製品",
+    "features": "機能特性",
+    "pricing": "価格プラン",
+    "support": "サポート",
+    "faq": "よくある質問",
+    "contact": "お問い合わせ",
+    "follow": "フォロー",
+    "rights": "すべての権利を保有"
+  },
+  "acknowledgments": {
+    "title": "謝辞",
+    "subtitle": "このプロジェクトを可能にしてくれた以下のオープンソースプロジェクトと貢献者に感謝します",
+    "categories": [
+      {
+        "name": "ソースコード",
+        "icon": "⚛️",
+        "items": [
+          {
+            "name": "Zippland",
+            "author": "Zippland",
+            "description": "Zipplandのソースコード",
+            "url": "https://github.com/Zippland/worth-calculator",
+            "license": "MIT"
+          }
+          
+        ]
+      }
+    ]
+  },
+  "nav": {
+    "home": "ホーム",
+    "features": "機能",
+    "pricing": "価格",
+    "contact": "お問い合わせ",
+    "acknowledgments": "謝辞"
+  },
+  "calculator": {
+    "title": "この仕事、正気でやれる？ブラック度診断",
+    "subtitle": "仕事のコストパフォーマンスを計算し、データでこの仕事が価値があるかどうかを判断",
+    "star_request": "スターをつけてサポート",
+    "annual_salary": "年収",
+    "annual_salary_cny": "年収(¥)",
+    "salary_placeholder": "年収を入力",
+    "salary_placeholder_cny": "年収を入力（人民元）",
+    "country_selection": "勤務国・地域",
+    "work_days_per_week": "週間勤務日数",
+    "wfh_days_per_week": "週間在宅勤務日数",
+    "work_hours": "日勤務時間",
+    "commute_hours": "日通勤時間",
+    "rest_time": "日休憩時間",
+    "annual_leave": "年次有給休暇日数",
+    "public_holidays": "法定祝日",
+    "paid_sick_leave": "有給病気休暇",
+    "environment_factors": "環境要因",
+    "work_environment": "職場環境",
+    "city_factor": "都市レベル",
+    "leadership": "リーダーシップ",
+    "teamwork": "チームワーク",
+    "education_level": "教育レベル",
+    "work_years": "勤務年数",
+    "job_stability": "仕事の種類",
+    "hometown": "故郷にいるか",
+    "shuttle": "シャトルサービス",
+    "canteen": "食堂サービス",
+    "working_days_per_year": "年間勤務日数",
+    "average_daily_salary": "日平均給与",
+    "job_value": "仕事価値",
+    "days_unit": "日",
+    "view_report": "詳細レポートを見る",
+    "history": "履歴",
+    "clear_all": "すべてクリア",
+    "no_history": "履歴記録なし",
+    "history_notice": "計算後に自動保存される記録",
+    "env_remote": "リモート",
+    "env_factory": "工場",
+    "env_normal": "普通",
+    "env_cbd": "CBD",
+    "city_tier1": "一線",
+    "city_newtier1": "新一線",
+    "city_tier2": "二線",
+    "city_tier3": "三線",
+    "city_tier4": "四線",
+    "city_county": "県城",
+    "city_town": "郷鎮",
+    "leader_bad": "悪い",
+    "leader_strict": "厳格",
+    "leader_normal": "普通",
+    "leader_good": "良い",
+    "leader_excellent": "優秀",
+    "team_bad": "悪い",
+    "team_normal": "普通",
+    "team_good": "良い",
+    "team_excellent": "優秀",
+    "degree_type": "学位タイプ",
+    "school_type": "学校タイプ",
+    "below_bachelor": "専科以下",
+    "bachelor": "学士",
+    "masters": "修士",
+    "phd": "博士",
+    "school_second_tier": "二本三本",
+    "school_first_tier_bachelor": "双非/QS100/USnews50",
+    "school_elite_bachelor": "985/211/QS30/USnews20",
+    "school_first_tier_higher": "双非/QS100/USnews50",
+    "school_elite_higher": "985/211/QS30/USnews20",
+    "bachelor_background": "学士背景",
+    "fresh_graduate": "新卒",
+    "years_1_3": "1-3年",
+    "years_3_5": "3-5年",
+    "years_5_8": "5-8年",
+    "years_8_10": "8-10年",
+    "years_10_12": "10-12年",
+    "years_above_12": "12年以上",
+    "job_government": "体制内",
+    "job_state": "央/国企",
+    "job_foreign": "外企",
+    "job_private": "私企",
+    "job_dispatch": "派遣",
+    "job_freelance": "フリーランス",
+    "not_hometown": "いいえ",
+    "is_hometown": "はい",
+    "shuttle_none": "影響なし",
+    "shuttle_inconvenient": "少し役立つ",
+    "shuttle_convenient": "とても役立つ",
+    "shuttle_direct": "直通素晴らしい",
+    "canteen_none": "影響なし",
+    "canteen_average": "まあまあ",
+    "canteen_good": "良い",
+    "canteen_excellent": "素晴らしい",
+    "visits": "総アクセス数",
+    "visitors": "訪問者数"
+  },
+  "rating": {
+    "enter_salary": "給与を入力してください",
+    "terrible": "最悪",
+    "poor": "悪い",
+    "average": "普通",
+    "good": "良い",
+    "great": "素晴らしい",
+    "excellent": "優秀",
+    "perfect": "完璧"
+  },
+  "share_job_worth_report": "仕事価値レポート",
+  "share_back_to_calculator": "計算機に戻る",
+  "share_your_job_worth_report": "あなたの仕事価値レポート",
+  "share_work_city": "勤務都市",
+  "share_daily_salary": "日給",
+  "share_days": "日",
+  "share_working_days_per_year": "年間勤務日数",
+  "share_work_hours_title": "労働時間",
+  "share_hours": "時間",
+  "share_daily_commute_hours": "通勤時間",
+  "share_custom_made": "仕事価値計算機でカスタム生成",
+  "share_generating": "生成中...",
+  "share_download_report": "レポートダウンロード",
+  "share_basic_info": "基本情報",
+  "share_country": "勤務国",
+  "share_day": "日",
+  "share_final_assessment": "総合評価",
+  "share_value_low": "現在の仕事価値は比較的低いです。労働条件の改善やより良い機会を検討することをお勧めします。",
+  "share_value_medium": "現在の仕事価値は中程度で、改善の余地があります。",
+  "share_value_high": "おめでとうございます！あなたの仕事価値は高いです。この良い状態を維持してください。"
+}

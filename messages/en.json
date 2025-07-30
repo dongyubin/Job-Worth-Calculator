@@ -1,0 +1,360 @@
+{
+  "hero": {
+    "title": "Revolutionary SaaS Solution",
+    "subtitle": "Help businesses achieve digital transformation and improve operational efficiency",
+    "description": "Our platform integrates advanced AI technology with an intuitive user interface, enabling your team to easily manage business processes, increase productivity, and reduce operational costs.",
+    "ctaText": "Free Trial",
+    "secondaryCtaText": "Watch Demo"
+  },
+  "sponsors": {
+    "title": "Trusted by Industry Leaders"
+  },
+  "benefits": {
+    "title": "Why Choose Us?",
+    "subtitle": "Three core advantages that make your business stand out",
+    "items": [
+      {
+        "title": "Boost Efficiency",
+        "description": "Automate workflows, reduce repetitive tasks, and let your team focus on core business"
+      },
+      {
+        "title": "Reduce Costs",
+        "description": "Optimize resource allocation, reduce unnecessary expenses, and improve ROI"
+      },
+      {
+        "title": "Data-Driven",
+        "description": "Real-time analytics and reporting to help you make informed business decisions"
+      }
+    ]
+  },
+  "features": {
+    "title": "Powerful Features",
+    "subtitle": "One-stop solution to meet all your needs",
+    "items": [
+      {
+        "title": "Quick Deployment",
+        "description": "Set up in 5 minutes with no complex IT configuration required"
+      },
+      {
+        "title": "Enterprise Security",
+        "description": "Bank-level encryption ensures your data is completely secure"
+      },
+      {
+        "title": "Global Availability",
+        "description": "99.9% uptime with global CDN acceleration"
+      },
+      {
+        "title": "Mobile Friendly",
+        "description": "Responsive design supporting all devices and platforms"
+      },
+      {
+        "title": "Easy Customization",
+        "description": "Flexible configuration options to adapt to your business needs"
+      },
+      {
+        "title": "Smart Analytics",
+        "description": "AI-driven insights to help optimize business performance"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Customer Success Stories",
+    "subtitle": "See what our customers say",
+    "items": [
+      {
+        "name": "John Smith",
+        "position": "CEO",
+        "company": "Tech Company A",
+        "content": "After using this platform, our work efficiency improved by 40%, and customer satisfaction also significantly increased."
+      },
+      {
+        "name": "Sarah Johnson",
+        "position": "Operations Director",
+        "company": "Enterprise B",
+        "content": "Simple to use, powerful features, completely meets our business needs."
+      },
+      {
+        "name": "Mike Wilson",
+        "position": "Founder",
+        "company": "Startup C",
+        "content": "Great value for money, helped us save a lot of development costs."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Choose the Right Plan",
+    "subtitle": "Flexible pricing for businesses of all sizes",
+    "popular": "Most Popular",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "Free",
+        "period": "",
+        "description": "Perfect for individuals and small teams",
+        "features": [
+          "Up to 5 users",
+          "Basic features",
+          "Email support",
+          "5GB storage"
+        ],
+        "ctaText": "Get Started Free"
+      },
+      {
+        "name": "Professional",
+        "price": "$99",
+        "period": "/month",
+        "description": "Perfect for growing businesses",
+        "features": [
+          "Up to 50 users",
+          "Advanced features",
+          "Priority support",
+          "100GB storage",
+          "API access"
+        ],
+        "ctaText": "Choose Professional"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Contact Us",
+        "period": "",
+        "description": "Perfect for large enterprises",
+        "features": [
+          "Unlimited users",
+          "All features",
+          "24/7 dedicated support",
+          "Unlimited storage",
+          "Custom development"
+        ],
+        "ctaText": "Contact Sales"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions about the Job Worth Calculator",
+    "items": [
+      {
+        "question": "How accurate is Job Worth Calculator?",
+        "answer": "Job Worth Calculator is based on a scientific salary evaluation model that considers multiple dimensions including salary, work hours, and environmental factors. While not 100% precise, it provides objective reference data for your job evaluation."
+      },
+      {
+        "question": "What is PPP purchasing power parity?",
+        "answer": "PPP is a purchasing power parity index used to compare the actual purchasing power of currencies in different countries. Job Worth Calculator uses PPP data to make salaries from different countries comparable."
+      },
+      {
+        "question": "Will my data be saved?",
+        "answer": "All calculations are performed locally in your browser, and data is not uploaded to servers. History records are only saved in your browser, ensuring privacy and security."
+      },
+      {
+        "question": "How to understand the job value score?",
+        "answer": "Higher scores indicate better job value. Generally: below 0.6 is terrible, 0.6-1.0 is poor, 1.0-1.8 is average, 1.8-2.5 is good, 2.5-3.2 is great, 3.2-4.0 is excellent, and above 4.0 is perfect."
+      },
+      {
+        "question": "Which countries and regions are supported?",
+        "answer": "Currently supports PPP data for 190+ countries and regions worldwide, covering major developed and developing countries. Data sources include authoritative institutions like the World Bank."
+      },
+      {
+        "question": "Can calculation results be shared?",
+        "answer": "Yes! You can generate sharing links or save as images to share your job value analysis results with friends and colleagues."
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the talented individuals behind our success",
+    "members": [
+      {
+        "name": "John Smith",
+        "firstName": "John",
+        "lastName": "Smith",
+        "positions": ["Chief Executive Officer", "Product Strategy Expert"],
+        "imageUrl": "https://i.pravatar.cc/250?img=58",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/johnsmith"
+          },
+          {
+            "name": "Github",
+            "url": "https://github.com/johnsmith"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/johnsmith"
+          }
+        ]
+      },
+      {
+        "name": "Sarah Johnson",
+        "firstName": "Sarah",
+        "lastName": "Johnson",
+        "positions": ["Chief Technology Officer", "Full-Stack Architect"],
+        "imageUrl": "https://i.pravatar.cc/250?img=47",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/sarahjohnson"
+          },
+          {
+            "name": "Github",
+            "url": "https://github.com/sarahjohnson"
+          }
+        ]
+      },
+      {
+        "name": "Emily Chen",
+        "firstName": "Emily",
+        "lastName": "Chen",
+        "positions": ["Product Manager", "UX Expert"],
+        "imageUrl": "https://i.pravatar.cc/250?img=32",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/emilychen"
+          },
+          {
+            "name": "X",
+            "url": "https://x.com/emilychen"
+          }
+        ]
+      },
+      {
+        "name": "Michael Davis",
+        "firstName": "Michael",
+        "lastName": "Davis",
+        "positions": ["Chief Financial Officer", "Operations Expert"],
+        "imageUrl": "https://i.pravatar.cc/250?img=68",
+        "socialNetworks": [
+          {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/michaeldavis"
+          }
+        ]
+      }
+    ]
+  },
+  "community": {
+    "title": "Join Our Community",
+    "subtitle": "Connect with developers worldwide, get the latest product updates and technical support",
+    "joinText": "Join",
+    "ctaTitle": "",
+    "ctaSubtitle": "Join the community now and start your journey",
+    "ctaButton": "Join Now",
+    "links": [
+      { "name": "Discord", "url": "https://discord.gg/yourcompany", "icon": "💬", "members": "10K+" },
+      { "name": "GitHub", "url": "https://github.com/yourcompany", "icon": "🐙", "members": "5K+" },
+      { "name": "Twitter", "url": "https://twitter.com/yourcompany", "icon": "🐦", "members": "15K+" },
+      { "name": "YouTube", "url": "https://youtube.com/yourcompany", "icon": "📺", "members": "8K+" }
+    ]
+  },
+  "showcase": {
+    "title": "Project Showcase",
+    "subtitle": "See our excellent work and success stories, learn how we help clients achieve their goals",
+    "items": [
+      {
+        "title": "E-commerce Platform Solution",
+        "description": "High-performance, scalable online shopping platform built for large e-commerce enterprises",
+        "image": "/assets/images/showcase1.jpg",
+        "tags": ["React", "Next.js", "TypeScript"],
+        "link": "#"
+      },
+      {
+        "title": "Enterprise Management System",
+        "description": "One-stop enterprise management solution to improve operational efficiency",
+        "image": "/assets/images/showcase2.jpg",
+        "tags": ["Node.js", "MongoDB", "AWS"],
+        "link": "#"
+      },
+      {
+        "title": "Mobile App Development",
+        "description": "Native mobile applications providing excellent user experience",
+        "image": "/assets/images/showcase3.jpg",
+        "tags": ["Vue.js", "Python", "Docker"],
+        "link": "#"
+      }
+    ],
+    "moreText": "Want to see more projects?",
+    "portfolioLink": "View Complete Portfolio →"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive technical services to accelerate your business growth",
+    "items": [
+      {
+        "title": "Technical Consulting",
+        "description": "Professional technical consulting to help you develop the best solutions",
+        "icon": "💡",
+        "features": ["Requirements Analysis", "Technology Selection", "Architecture Design", "Performance Optimization"]
+      },
+      {
+        "title": "Full-Stack Development",
+        "description": "Full-stack development services, one-stop solution from frontend to backend",
+        "icon": "⚡",
+        "features": ["Frontend Development", "Backend Development", "Database Design", "API Integration"]
+      },
+      {
+        "title": "DevOps Services",
+        "description": "24/7 DevOps services to ensure stable system operation",
+        "icon": "🛡️",
+        "features": ["Monitoring & Alerts", "Automated Deployment", "Performance Tuning", "Security Hardening"]
+      },
+      {
+        "title": "Technical Training",
+        "description": "Professional technical training to enhance team capabilities",
+        "icon": "🎓",
+        "features": ["Technical Training", "Code Review", "Best Practices", "Knowledge Sharing"]
+      }
+    ],
+    "learnMore": "Learn More",
+    "ctaTitle": "Need customized services?",
+    "ctaSubtitle": "Contact us for exclusive solutions",
+    "ctaButton": "Contact Now"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have questions? We're here to help",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "name": "Your Name",
+    "email_placeholder": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message"
+  },
+  "footer": {
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "support": "Support",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "rights": "All rights reserved"
+  },
+  "acknowledgments": {
+    "title": "Acknowledgments",
+    "subtitle": "Thanks to the following open source projects and contributors that made this project possible",
+    "categories": [
+      {
+        "name": "Source Code",
+        "icon": "⚛️",
+        "items": [
+          {
+            "name": "Zippland",
+            "author": "Zippland",
+            "description": "Zippland Source Code",
+            "url": "https://github.com/Zippland/worth-calculator",
+            "license": "MIT"
+          }
+        ]
+      }
+    ]
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "acknowledgments": "Acknowledgments"
+  }
+}

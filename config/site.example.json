@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "AI智能助手 - 提升工作效率的最佳选择",
+    "description": "功能强大的AI助手，帮助企业和个人提升工作效率，自动化处理日常任务",
+    "keywords": "AI助手, 工作效率, 自动化, 智能办公",
+    "author": "AI科技公司",
+    "favicon": "/assets/images/favicon.ico",
+    "ogImage": "/assets/images/og-image.jpg"
+  },
+  "branding": {
+    "logo": "AI智能助手",
+    "logoImage": "/assets/images/logo.png",
+    "tagline": "让AI为您的工作赋能"
+  },
+  "contact": {
+    "email": "contact@ai-assistant.com", 
+    "phone": "+86 400-888-8888",
+    "address": "北京市朝阳区科技园区 AI大厦 8层"
+  },
+  "social": {
+    "twitter": "https://twitter.com/ai_assistant",
+    "facebook": "https://facebook.com/ai_assistant", 
+    "linkedin": "https://linkedin.com/company/ai_assistant",
+    "instagram": "https://instagram.com/ai_assistant"
+  },
+  "analytics": {
+    "googleAnalytics": "G-XXXXXXXXXX",
+    "googleAdsense": "",
+    "facebookPixel": ""
+  },
+  "theme": {
+    "template": "modern",
+    "variants": {
+      "modern": {
+        "name": "现代简约",
+        "description": "简洁现代的设计风格", 
+        "primaryColor": "blue",
+        "style": "minimalist"
+      },
+      "elegant": {
+        "name": "优雅商务",
+        "description": "高端商务风格",
+        "primaryColor": "slate", 
+        "style": "corporate"
+      },
+      "vibrant": {
+        "name": "活力创新", 
+        "description": "充满活力的创新风格",
+        "primaryColor": "emerald",
+        "style": "creative"
+      }
+    }
+  }
+}

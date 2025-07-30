@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Your Product Name - Product Description",
+    "description": "Your product description for SEO optimization and social media sharing",
+    "keywords": "keyword1, keyword2, keyword3",
+    "author": "Your Company Name",
+    "favicon": "/assets/images/favicon.ico",
+    "ogImage": "/assets/images/og-image.jpg"
+  },
+  "branding": {
+    "logo": "Your Brand Name",
+    "logoImage": "/assets/images/logo.png",
+    "tagline": "Your Brand Tagline"
+  },
+  "contact": {
+    "email": "contact@yourcompany.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "Your Company Address"
+  },
+  "social": {
+    "twitter": "https://twitter.com/yourcompany",
+    "facebook": "https://facebook.com/yourcompany",
+    "linkedin": "https://linkedin.com/company/yourcompany",
+    "instagram": "https://instagram.com/yourcompany"
+  },
+  "analytics": {
+    "googleAnalytics": "",
+    "googleAdsense": "",
+    "facebookPixel": ""
+  },
+  "theme": {
+    "template": "modern"
+  },
+  "sections": {
+    "navbar": { "enabled": true },
+    "hero": { "enabled": true },
+    "sponsors": { "enabled": true },
+    "benefits": { "enabled": true },
+    "features": { "enabled": true },
+    "testimonials": { "enabled": true },
+    "team": { "enabled": true },
+    "community": { "enabled": true },
+    "showcase": { "enabled": true },
+    "pricing": { "enabled": false },
+    "faq": { "enabled": true },
+    "services": { "enabled": true },
+    "contact": { "enabled": true },
+    "footer": { "enabled": true }
+  }
+}
