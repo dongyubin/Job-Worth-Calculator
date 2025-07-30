@@ -3,6 +3,12 @@
     "logo": "Job Worth Calculator",
     "tagline": "让数据告诉你这班上得值不值"
   },
+  "icons": {
+    "favicon": "/favicon.ico",
+    "icon": "/icon.png",
+    "apple": "/apple-icon.png",
+    "shortcut": "/favicon-16x16.png"
+  },
   "locales": ["en", "zh", "ja"],
   "baseUrl": "https://jobworthcalculator.wwkejishe.top",
   "metadata": {

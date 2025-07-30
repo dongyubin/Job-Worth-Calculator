@@ -6,6 +6,12 @@ export interface SiteConfig {
   locales?: string[]
   baseUrl?: string
   metadata?: Record<string, any>
+  icons?: {
+    favicon?: string
+    icon?: string
+    apple?: string
+    shortcut?: string
+  }
   meta: {
     title: string
     description: string

@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Allow specific language paths
+Allow: /zh/
+Allow: /en/
+Allow: /ja/
+
+# Disallow API routes
+Disallow: /api/
+
+# Disallow Next.js internal files
+Disallow: /_next/
+Disallow: /_vercel/
+
+# Allow important pages
+Allow: /zh/calculator
+Allow: /en/calculator
+Allow: /ja/calculator
+Allow: /zh/share
+Allow: /en/share
+Allow: /ja/share
+
+# Sitemap location
+Sitemap: https://jobworthcalculator.wwkejishe.top/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

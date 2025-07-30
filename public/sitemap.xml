@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Chinese pages -->
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/zh</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/zh/calculator</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en/calculator"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja/calculator"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/zh/share</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en/share"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja/share"/>
+  </url>
+  
+  <!-- English pages -->
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/en</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/en/calculator</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh/calculator"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja/calculator"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/en/share</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh/share"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://jobworthcalculator.wwkejishe.top/ja/share"/>
+  </url>
+  
+  <!-- Japanese pages -->
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/ja</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/ja/calculator</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh/calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en/calculator"/>
+  </url>
+  <url>
+    <loc>https://jobworthcalculator.wwkejishe.top/ja/share</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://jobworthcalculator.wwkejishe.top/zh/share"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jobworthcalculator.wwkejishe.top/en/share"/>
+  </url>
+</urlset>
