@@ -34,6 +34,12 @@ async function getSiteConfig() {
     branding: {
       logo: 'Job Worth Calculator'
     },
+    icons: {
+      favicon: '/favicon-16x16.ico',
+      icon: '/icon.png',
+      apple: '/apple-icon.png',
+      shortcut: '/favicon-16x16.png'
+    },
     metadata: {
       zh: {
         title: 'Job Worth Calculator - 科学评估你的工作性价比',
@@ -81,22 +87,51 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     authors: [{ name: siteConfig.branding?.logo || 'Job Worth Calculator' }],
     creator: siteConfig.branding?.logo || 'Job Worth Calculator',
     metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'zh-CN': `${baseUrl}/zh`,
+        'en-US': `${baseUrl}/en`,
+        'ja-JP': `${baseUrl}/ja`,
+      },
+    },
+    icons: siteConfig.icons || {
+      icon: '/favicon.ico',
+      shortcut: '/favicon-16x16.png',
+      apple: '/apple-touch-icon.png',
+    },
     openGraph: {
       type: 'website',
       locale: `${locale}_${locale.toUpperCase()}`,
-      url: `/${locale}`,
+      url: `${baseUrl}/${locale}`,
       title: localeMetadata.title,
       description: localeMetadata.description,
       siteName: siteConfig.branding?.logo || 'Job Worth Calculator',
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: localeMetadata.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: localeMetadata.title,
       description: localeMetadata.description,
+      images: [`${baseUrl}/og-image.png`],
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   }
 }

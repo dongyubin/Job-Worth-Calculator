@@ -9,6 +9,14 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 export const metadata = {
   title: 'Job Worth Calculator',
   description: 'Scientifically evaluate your job\'s cost-effectiveness',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-icon.png',
+  },
 }
 
 export default function RootLayout({
