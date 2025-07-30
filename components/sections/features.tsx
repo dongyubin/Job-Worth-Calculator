@@ -25,7 +25,7 @@ export function Features({ messages, config }: FeaturesProps) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--primary))]/10 
                         border border-[hsl(var(--primary))]/20 text-[hsl(var(--primary))] text-sm font-medium mb-6">
             <CheckCircle className="w-4 h-4" />
-            核心功能特性
+            {messages.title}
           </div>
           
           <h2 className="heading-2 mb-6">
@@ -76,28 +76,11 @@ export function Features({ messages, config }: FeaturesProps) {
                   {item.description}
                 </p>
                 
-                {/* Learn more link */}
-                <div className="flex items-center gap-2 text-[hsl(var(--primary))] text-sm font-medium 
-                              opacity-0 group-hover:opacity-100 transition-all duration-300 
-                              transform translate-y-2 group-hover:translate-y-0">
-                  了解更多
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
               </div>
             )
           })}
         </div>
         
-        {/* Bottom CTA */}
-        <div className="text-center mt-20 animate-fade-up">
-          <p className="text-[hsl(var(--muted-foreground))] mb-6">
-            还有更多强大功能等你发现
-          </p>
-          <a href="#pricing" className="btn btn-outline btn-lg group">
-            查看完整功能列表
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-        </div>
       </div>
     </section>
   )

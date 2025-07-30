@@ -33,7 +33,7 @@ export function Hero({ messages, config }: HeroProps) {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--primary))]/10 
                           border border-[hsl(var(--primary))]/20 text-[hsl(var(--primary))] text-sm font-medium">
               <Sparkles className="w-4 h-4" />
-              新产品发布
+              {messages.title}
             </div>
             
             <h1 className="heading-1 mb-6 animate-slide-left">

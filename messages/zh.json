@@ -1,4 +1,14 @@
 {
+  "nav": {
+    "home": "首页",
+    "features": "功能",
+    "pricing": "价格",
+    "contact": "联系我们",
+    "testimonials": "用户评价",
+    "faq": "常见问题",
+    "acknowledgments": "致谢",
+    "hero": "英雄"
+  },
   "hero": {
     "title": "革命性的SaaS解决方案",
     "subtitle": "帮助企业实现数字化转型，提升运营效率",
@@ -28,32 +38,28 @@
     ]
   },
   "features": {
-    "title": "强大的功能特性",
-    "subtitle": "一站式解决方案，满足您的所有需求",
+    "title": "Job Worth Calculator 的功能特性",
+    "subtitle": "一站式全面评估工作价值",
     "items": [
       {
-        "title": "快速部署",
-        "description": "5分钟即可完成设置，无需复杂的IT配置"
+        "title": "💰 全面评估",
+        "description": "Job Worth Calculator 基于薪资、工作时间、通勤时间、工作环境等多方面因素计算工作价值"
       },
       {
-        "title": "企业级安全",
-        "description": "银行级加密，确保您的数据安全无忧"
+        "title": "🌏 PPP转换",
+        "description": "Job Worth Calculator 通过购买力平价(PPP)转换支持190多个国家的薪资比较"
       },
       {
-        "title": "全球可用",
-        "description": "99.9%的正常运行时间，全球CDN加速"
+        "title": "👩‍🎓 个人因素",
+        "description": "Job Worth Calculator 根据个人学历、工作经验等定制计算"
       },
       {
-        "title": "移动友好",
-        "description": "响应式设计，支持所有设备和平台"
+        "title": "🌐 国际化",
+        "description": "Job Worth Calculator 支持中、英、日文三语"
       },
       {
-        "title": "易于定制",
-        "description": "灵活的配置选项，适应您的业务需求"
-      },
-      {
-        "title": "智能分析",
-        "description": "AI驱动的洞察，帮助优化业务表现"
+        "title": "📱 移动友好",
+        "description": "Job Worth Calculator 响应式设计，适用于所有设备"
       }
     ]
   },
@@ -131,31 +137,38 @@
   },
   "faq": {
     "title": "常见问题",
-    "subtitle": "关于工作价值计算器的常见疑问",
+    "subtitle": "关于 Job Worth Calculator 的常见疑问",
     "items": [
       {
-        "question": "这个计算器的准确性如何？",
+        "question": "Job Worth Calculator 的准确性如何？",
         "answer": "计算器基于科学的薪资评估模型，综合考虑薪资、工作时间、环境因素等多个维度。虽然不能100%精确，但能为您提供客观的参考依据。"
       },
       {
-        "question": "PPP购买力平价是什么意思？",
+        "question": "Job Worth Calculator 的 PPP 购买力平价是什么意思？",
         "answer": "PPP是购买力平价指数，用于比较不同国家的货币实际购买力。计算器使用PPP数据，让不同国家的薪资具有可比性。"
       },
       {
-        "question": "我的数据会被保存吗？",
-        "answer": "所有计算都在您的浏览器本地进行，数据不会上传到服务器。历史记录仅保存在您的浏览器中，确保隐私安全。"
+        "question": "Job Worth Calculator 生成数据会被保存吗？",
+        "answer": "Job Worth Calculator 所有计算都在您的浏览器本地进行，数据不会上传到服务器。历史记录仅保存在您的浏览器中，确保隐私安全。"
       },
       {
-        "question": "如何理解工作价值评分？",
+        "question": "Job Worth Calculator 如何理解工作价值评分？",
         "answer": "评分越高说明工作性价比越好。一般来说：0.6以下为糟糕，0.6-1.0为较差，1.0-1.8为一般，1.8-2.5为不错，2.5-3.2为很好，3.2-4.0为优秀，4.0以上为完美。"
       },
       {
-        "question": "支持哪些国家和地区？",
+        "question": "Job Worth Calculator 支持哪些国家和地区？",
         "answer": "目前支持全球190+个国家和地区的PPP数据，涵盖主要发达国家和发展中国家，数据来源于世界银行等权威机构。"
       },
       {
-        "question": "计算结果可以分享吗？",
+        "question": "Job Worth Calculator 计算结果可以分享吗？",
         "answer": "可以！您可以生成分享链接或保存为图片，与朋友同事分享您的工作价值分析结果。"
+      },
+      {
+        "question": "🖥️ Job Worth Calculator 的使用方法",
+        "answer": "1. 输入年薪\n2. 选择工作国家/地区\n3. 填写工作细节（每周工作天数、工作时长、通勤时间等）\n4. 指定环境因素（城市、工作环境、团队等）\n5. 输入学历和工作经验\n6. 查看工作性价比分数和详细评估\n7. 生成可分享的报告"
+      },{
+        "question": "📊 Job Worth Calculator 的计算方法",
+        "answer": "工作性价比分数使用全面的公式计算，考虑了：\n- 标准化日薪（经PPP调整）\n- 工作时间（每周工作天数、工作时长）\n- 通勤时间（每天通勤时长）\n- 工作环境因素（办公地点、团队关系）\n- 学历加成（根据学历水平调整）\n- 经验值调整（根据工作经验年限调整）\n"
       }
     ]
   },
@@ -349,13 +362,10 @@
           }
         ]
       }
-    ]
-  },
-  "nav": {
-    "home": "首页",
-    "features": "功能",
-    "pricing": "价格",
-    "contact": "联系我们",
-    "acknowledgments": "致谢"
+    ],
+    "by": "由",
+    "visit_project": "访问项目",
+    "open_source_love": "感谢开源社区的无私奉献 💝"
   }
+  
 }

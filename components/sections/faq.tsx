@@ -21,7 +21,7 @@ export function FAQ({ messages }: FAQProps) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--primary))]/10 
                         border border-[hsl(var(--primary))]/20 text-[hsl(var(--primary))] text-sm font-medium mb-6">
             <HelpCircle className="w-4 h-4" />
-            常见问题
+            {messages.title}
           </div>
           
           <h2 className="heading-2 mb-6">
@@ -62,7 +62,7 @@ export function FAQ({ messages }: FAQProps) {
               }`}>
                 <div className="px-8 pb-6 bg-gradient-to-r from-[hsl(var(--accent))]/20 to-[hsl(var(--secondary))]/10">
                   <div className="w-full h-px bg-gradient-to-r from-[hsl(var(--border))]/50 to-transparent mb-6"></div>
-                  <p className="text-body-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+                  <p className="text-body-sm text-[hsl(var(--muted-foreground))] leading-relaxed whitespace-pre-line">
                     {item.answer}
                   </p>
                 </div>

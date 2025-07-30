@@ -41,5 +41,8 @@
       "description": "Free job worth calculator to scientifically evaluate your job's cost-effectiveness. Based on multi-dimensional factors like salary, working hours, and environment, calculate whether your job is worth it! Supports global PPP purchasing power parity comparison.",
       "keywords": ["job worth calculator", "salary calculator", "job value", "PPP purchasing power parity", "job evaluation", "workplace tools", "salary analysis"]
     }
+  },
+  "social": {
+    "github": "https://github.com/dongyubin/Job-Worth-Calculator"
   }
 }

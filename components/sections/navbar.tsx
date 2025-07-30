@@ -28,9 +28,12 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
 
   const navigation = [
     { name: messages.nav.home, href: '#calculator' },
+    ...(contentConfig?.sections?.hero?.enabled ? [{ name: messages.nav.hero, href: '#hero' }] : []),
     ...(contentConfig?.sections?.features?.enabled ? [{ name: messages.nav.features, href: '#features' }] : []),
     ...(contentConfig?.sections?.pricing?.enabled ? [{ name: messages.nav.pricing, href: '#pricing' }] : []),
-    ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.nav.acknowledgments || '致谢', href: '#acknowledgments' }] : []),
+    ...(contentConfig?.sections?.testimonials?.enabled ? [{ name: messages.nav.testimonials, href: '#testimonials' }] : []),
+    ...(contentConfig?.sections?.faq?.enabled ? [{ name: messages.nav.faq, href: '#faq' }] : []),
+    ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.nav.acknowledgments, href: '#acknowledgments' }] : []),
     ...(contentConfig?.sections?.contact?.enabled ? [{ name: messages.nav.contact, href: '#contact' }] : []),
   ]
 

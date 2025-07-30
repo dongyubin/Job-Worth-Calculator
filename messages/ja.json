@@ -1,4 +1,14 @@
 {
+  "nav": {
+    "home": "ホーム",
+    "features": "機能",
+    "pricing": "価格",
+    "contact": "お問い合わせ",
+    "testimonials": "ユーザーの声",
+    "faq": "よくある質問",
+    "acknowledgments": "謝辞",
+    "hero": "ヒーロー"
+  },
   "hero": {
     "title": "革新的なSaaSソリューション",
     "subtitle": "企業のデジタル変革を支援し、運営効率を向上させます",
@@ -28,32 +38,28 @@
     ]
   },
   "features": {
-    "title": "強力な機能特性",
-    "subtitle": "すべてのニーズを満たすワンストップソリューション",
+    "title": "Job Worth Calculatorの機能特性",
+    "subtitle": "仕事の価値を包括的に評価するワンストップソリューション",
     "items": [
       {
-        "title": "クイック展開",
-        "description": "複雑なIT設定不要で5分でセットアップ完了"
+        "title": "💰 包括的評価",
+        "description": "Job Worth Calculatorは、給与、労働時間、通勤時間、職場環境など、複数の要素に基づいて仕事の価値を計算します。"
       },
       {
-        "title": "エンタープライズセキュリティ",
-        "description": "銀行レベルの暗号化でデータの完全なセキュリティを確保"
+        "title": "🌏 PPP変換",
+        "description": "Job Worth Calculatorは、購買力平価（PPP）変換を通じて190か国以上の給与比較をサポートします。"
       },
       {
-        "title": "グローバル対応",
-        "description": "99.9%の稼働率とグローバルCDN加速"
+        "title": "👩‍🎓 個人要素",
+        "description": "Job Worth Calculatorは、個人の学歴、職歴などに基づいて計算をカスタマイズします。"
       },
       {
-        "title": "モバイルフレンドリー",
-        "description": "すべてのデバイスとプラットフォームをサポートするレスポンシブデザイン"
+        "title": "🌐 国際化",
+        "description": "Job Worth Calculatorは、日本語、中国語、英語に対応しています。"
       },
       {
-        "title": "カスタマイズ容易",
-        "description": "ビジネスニーズに適応する柔軟な設定オプション"
-      },
-      {
-        "title": "スマート分析",
-        "description": "AIドリブンな洞察でビジネスパフォーマンスの最適化を支援"
+        "title": "📱 モバイルフレンドリー",
+        "description": "Job Worth Calculatorは、すべてのデバイスで動作するレスポンシブデザインです。"
       }
     ]
   },
@@ -131,31 +137,39 @@
   },
   "faq": {
     "title": "よくある質問",
-    "subtitle": "仕事価値計算機についてのよくある疑問",
+    "subtitle": "Job Worth Calculatorに関するよくある質問",
     "items": [
       {
-        "question": "この計算機の精度はどの程度ですか？",
-        "answer": "計算機は科学的な給与評価モデルに基づいており、給与、労働時間、環境要因など複数の次元を総合的に考慮しています。100%正確ではありませんが、客観的な参考データを提供できます。"
+        "question": "Job Worth Calculatorの精度はどのくらいですか？",
+        "answer": "この計算機は、給与、労働時間、環境要因など複数の側面を考慮した科学的な給与評価モデルに基づいています。100%正確ではありませんが、仕事の評価のための客観的な参考情報を提供します。"
       },
       {
-        "question": "PPP購買力平価とは何ですか？",
-        "answer": "PPPは購買力平価指数で、異なる国の通貨の実際の購買力を比較するために使用されます。計算機はPPPデータを使用して、異なる国の給与を比較可能にします。"
+        "question": "Job Worth CalculatorでのPPP（購買力平価）とは何ですか？",
+        "answer": "PPPは、異なる国の通貨の実際の購買力を比較するために使用される購買力平価指数です。この計算機はPPPデータを使用して、異なる国の給与を比較可能にします。"
       },
       {
-        "question": "データは保存されますか？",
-        "answer": "すべての計算はブラウザ内でローカルに実行され、データはサーバーにアップロードされません。履歴記録はブラウザにのみ保存され、プライバシーとセキュリティが確保されます。"
+        "question": "Job Worth Calculatorで生成されたデータは保存されますか？",
+        "answer": "Job Worth Calculatorのすべての計算はブラウザでローカルに実行され、データはサーバーにアップロードされません。履歴記録はブラウザにのみ保存され、プライバシーとセキュリティが確保されます。"
       },
       {
-        "question": "仕事価値スコアをどう理解すればよいですか？",
-        "answer": "スコアが高いほど仕事のコストパフォーマンスが良いことを示します。一般的に：0.6未満は最悪、0.6-1.0は悪い、1.0-1.8は普通、1.8-2.5は良い、2.5-3.2は素晴らしい、3.2-4.0は優秀、4.0以上は完璧です。"
+        "question": "Job Worth Calculatorのスコアはどのように理解すればよいですか？",
+        "answer": "スコアが高いほど、その仕事の価値が高いことを示します。一般的に、0.6未満は「ひどい」、0.6〜1.0は「悪い」、1.0〜1.8は「普通」、1.8〜2.5は「良い」、2.5〜3.2は「素晴らしい」、3.2〜4.0は「優秀」、4.0以上は「完璧」です。"
       },
       {
-        "question": "どの国と地域がサポートされていますか？",
-        "answer": "現在、世界190カ国以上のPPPデータをサポートしており、主要な先進国と発展途上国をカバーしています。データソースは世界銀行などの権威ある機関です。"
+        "question": "Job Worth Calculatorはどの国と地域をサポートしていますか？",
+        "answer": "現在、世界銀行などの権威ある機関から提供されたデータに基づき、主要な先進国および発展途上国を含む190以上の国と地域のPPPデータをサポートしています。"
       },
       {
-        "question": "計算結果を共有できますか？",
-        "answer": "はい！共有リンクを生成したり、画像として保存して、友人や同僚と仕事価値分析結果を共有できます。"
+        "question": "Job Worth Calculatorの計算結果は共有できますか？",
+        "answer": "はい！共有可能なリンクを生成したり、画像として保存して、友人や同僚と仕事の価値分析結果を共有できます。"
+      },
+      {
+        "question": "🖥️ Job Worth Calculatorの使い方",
+        "answer": "1. 年収を入力\n2. 勤務国/地域を選択\n3. 仕事の詳細（週の労働日数、労働時間、通勤時間など）を記入\n4. 環境要因（都市、職場環境、チームなど）を指定\n5. 学歴と職歴を入力\n6. 仕事の価値スコアと詳細な評価を確認\n7. 共有可能なレポートを生成"
+      },
+      {
+        "question": "📊 Job Worth Calculatorの計算方法",
+        "answer": "仕事の価値スコアは、以下を考慮した包括的な式を使用して計算されます：\n- 標準化された日給（PPPで調整）\n- 労働時間（週の労働日数、労働時間）\n- 通勤時間（毎日の通勤時間）\n- 職場環境要因（オフィスの場所、チームの関係）\n- 学歴ボーナス（学歴に応じて調整）\n- 経験値調整（職歴年数に応じて調整）\n"
       }
     ]
   },
@@ -347,17 +361,12 @@
             "url": "https://github.com/Zippland/worth-calculator",
             "license": "MIT"
           }
-          
         ]
       }
-    ]
-  },
-  "nav": {
-    "home": "ホーム",
-    "features": "機能",
-    "pricing": "価格",
-    "contact": "お問い合わせ",
-    "acknowledgments": "謝辞"
+    ],
+    "by": "作",
+    "visit_project": "プロジェクトにアクセス",
+    "open_source_love": "オープンソースコミュニティの無私の献身に感謝します 💝"
   },
   "calculator": {
     "title": "この仕事、正気でやれる？ブラック度診断",
@@ -469,19 +478,19 @@
   "share_your_job_worth_report": "あなたの仕事価値レポート",
   "share_work_city": "勤務都市",
   "share_daily_salary": "日給",
-  "share_days": "日",
-  "share_working_days_per_year": "年間勤務日数",
-  "share_work_hours_title": "労働時間",
-  "share_hours": "時間",
-  "share_daily_commute_hours": "通勤時間",
-  "share_custom_made": "仕事価値計算機でカスタム生成",
-  "share_generating": "生成中...",
-  "share_download_report": "レポートダウンロード",
-  "share_basic_info": "基本情報",
-  "share_country": "勤務国",
-  "share_day": "日",
-  "share_final_assessment": "総合評価",
-  "share_value_low": "現在の仕事価値は比較的低いです。労働条件の改善やより良い機会を検討することをお勧めします。",
-  "share_value_medium": "現在の仕事価値は中程度で、改善の余地があります。",
-  "share_value_high": "おめでとうございます！あなたの仕事価値は高いです。この良い状態を維持してください。"
+    "share_days": "日",
+    "share_working_days_per_year": "年間勤務日数",
+    "share_work_hours_title": "労働時間",
+    "share_hours": "時間",
+    "share_daily_commute_hours": "通勤時間",
+    "share_custom_made": "仕事価値計算機でカスタム生成",
+    "share_generating": "生成中...",
+    "share_download_report": "レポートダウンロード",
+    "share_basic_info": "基本情報",
+    "share_country": "勤務国",
+    "share_day": "日",
+    "share_final_assessment": "総合評価",
+    "share_value_low": "現在の仕事価値は比較的低いです。労働条件の改善やより良い機会を検討することをお勧めします。",
+    "share_value_medium": "現在の仕事価値は中程度で、改善の余地があります。",
+    "share_value_high": "おめでとうございます！あなたの仕事価値は高いです。この良い状態を維持してください。"
 }

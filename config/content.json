@@ -5,7 +5,7 @@
     "calculator": { "enabled": true },
     "sponsors": { "enabled": false },
     "benefits": { "enabled": false },
-    "features": { "enabled": false },
+    "features": { "enabled": true },
     "testimonials": { "enabled": false },
     "team": { "enabled": false },
     "community": { "enabled": false },

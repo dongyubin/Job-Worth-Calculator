@@ -17,7 +17,7 @@ export function Footer({ messages }: FooterProps) {
     ],
     support: [
       ...(contentConfig?.sections?.faq?.enabled ? [{ name: messages.faq, href: '#faq' }] : []),
-      ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.nav?.acknowledgments || '致谢', href: '#acknowledgments' }] : []),
+      ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.acknowledgments , href: '#acknowledgments' }] : []),
       ...(contentConfig?.sections?.contact?.enabled ? [{ name: messages.contact, href: '#contact' }] : []),
     ],
   }

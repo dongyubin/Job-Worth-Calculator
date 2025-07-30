@@ -26,7 +26,7 @@ export function Contact({ messages }: ContactProps) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--primary))]/10 
                         border border-[hsl(var(--primary))]/20 text-[hsl(var(--primary))] text-sm font-medium mb-6">
             <MessageSquare className="w-4 h-4" />
-            联系我们
+            {messages.title}
           </div>
           
           <h2 className="heading-2 mb-6">

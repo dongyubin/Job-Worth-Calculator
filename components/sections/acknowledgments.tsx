@@ -87,7 +87,7 @@ export function Acknowledgments({ messages }: AcknowledgmentsProps) {
                           {item.name}
                         </h4>
                         <p className="text-[hsl(var(--muted-foreground))] text-sm">
-                          {messages.by || '由'} {item.author}
+                          {acknowledgmentsData.by || '由'} {item.author}
                         </p>
                       </div>
                       
@@ -125,7 +125,7 @@ export function Acknowledgments({ messages }: AcknowledgmentsProps) {
                                  text-sm font-medium transition-colors duration-300 flex items-center gap-1
                                  opacity-0 group-hover/card:opacity-100"
                       >
-                        {messages.visit_project || '访问项目'}
+                        {acknowledgmentsData.visit_project || '访问项目'}
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>
@@ -143,7 +143,7 @@ export function Acknowledgments({ messages }: AcknowledgmentsProps) {
                         border border-[hsl(var(--border))]/50">
             <Heart className="w-5 h-5 text-[hsl(var(--primary))] animate-pulse" />
             <span className="text-[hsl(var(--muted-foreground))] text-sm">
-              {messages.open_source_love || '感谢开源社区的无私奉献 💝'}
+              {acknowledgmentsData.open_source_love || '感谢开源社区的无私奉献 💝'}
             </span>
           </div>
         </div>
