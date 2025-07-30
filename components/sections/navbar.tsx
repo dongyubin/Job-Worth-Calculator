@@ -122,7 +122,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
               className="btn btn-gradient btn-default group relative overflow-hidden"
             >
               <Sparkles className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
-              立即计算
+              {messages.nav.home_btn || '立即计算'}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               
               {/* Shimmer effect */}
@@ -181,7 +181,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
                 onClick={() => setIsOpen(false)}
               >
                 <Sparkles className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
-                立即计算
+                {messages.nav.home_btn || '立即计算'}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
             </div>
