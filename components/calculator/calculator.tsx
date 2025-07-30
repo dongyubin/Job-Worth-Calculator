@@ -310,6 +310,7 @@ interface HistoryItem {
   assessment: string;
   assessmentColor: string;
   salary: string;
+  salaryUnit: 'yuan' | 'wan'; // 添加薪资单位字段
   countryCode: string;
   countryName: string;
   
@@ -344,6 +345,7 @@ interface HistoryItem {
 // 定义表单数据接口
 interface FormData {
   salary: string;
+  salaryUnit: 'yuan' | 'wan'; // 添加薪资单位字段：元或万元
   nonChinaSalary: boolean;
   workDaysPerWeek: string;
   wfhDaysPerWeek: string;
@@ -412,6 +414,7 @@ const SalaryCalculator = () => {
   // 状态管理 - 基础表单和选项
   const [formData, setFormData] = useState<FormData>({
     salary: '',
+    salaryUnit: 'wan', // 默认使用万元作为单位
     nonChinaSalary: false,
     workDaysPerWeek: '5',
     wfhDaysPerWeek: '0',
@@ -484,6 +487,7 @@ const SalaryCalculator = () => {
             assessment: item.assessment || 'rating_enter_salary',
             assessmentColor: item.assessmentColor || 'text-gray-500',
             salary: item.salary || '',
+            salaryUnit: item.salaryUnit || 'wan', // 为旧记录添加默认单位（万元）
             countryCode: item.countryCode || 'CN',
             countryName: item.countryName || '中国',
             
@@ -610,14 +614,20 @@ const SalaryCalculator = () => {
     if (!formData.salary) return 0;
     const workingDays = calculateWorkingDays();
     
+    // 根据用户选择的单位转换薪资值
+    let actualSalary = Number(formData.salary);
+    if (formData.salaryUnit === 'wan') {
+      actualSalary = actualSalary * 10000; // 万元转换为元
+    }
+    
     // 应用PPP转换因子标准化薪资
     // 如果选择了非中国地区，使用选定国家的PPP；否则使用中国默认值4.19
     const isNonChina = selectedCountry !== 'CN';
     const pppFactor = isNonChina ? pppFactors[selectedCountry] || 4.19 : 4.19;
-    const standardizedSalary = Number(formData.salary) * (4.19 / pppFactor);
+    const standardizedSalary = actualSalary * (4.19 / pppFactor);
     
     return standardizedSalary / workingDays; // 除 0 不管, Infinity(爽到爆炸)!
-  }, [formData.salary, selectedCountry, calculateWorkingDays]);
+  }, [formData.salary, formData.salaryUnit, selectedCountry, calculateWorkingDays]);
 
   // 新增：获取显示用的日薪（转回原始货币）
   const getDisplaySalary = useCallback(() => {
@@ -761,6 +771,26 @@ const SalaryCalculator = () => {
     return { text: t('rating_perfect'), color: "text-yellow-400" };
   }, [formData.salary, value, t]);
   
+  // 格式化显示值，支持万元换算
+  const formatValueDisplay = useCallback((value: number) => {
+    if (value >= 10000) {
+      return (value / 10000).toFixed(1) + '万';
+    }
+    return value.toFixed(2);
+  }, []);
+  
+  // 格式化薪资显示，包含单位信息
+  const formatSalaryDisplay = useCallback((salary: string, salaryUnit: 'yuan' | 'wan', countryCode: string) => {
+    const currencySymbol = countryCode !== 'CN' ? '$' : '¥';
+    const unitText = salaryUnit === 'wan' ? '万元' : '元';
+    
+    if (countryCode !== 'CN') {
+      return `${currencySymbol}${salary}`;
+    } else {
+      return `${salary}${unitText}`;
+    }
+  }, []);
+  
   // 获取评级的翻译键，用于分享链接
   const getValueAssessmentKey = useCallback(() => {
     if (!formData.salary) return 'rating_enter_salary';
@@ -886,6 +916,7 @@ const SalaryCalculator = () => {
       assessment: getValueAssessmentKey(), // 使用翻译键而不是已翻译的文本
       assessmentColor: getValueAssessment().color,
       salary: formData.salary,
+      salaryUnit: formData.salaryUnit, // 保存薪资单位
       countryCode: selectedCountry,
       countryName: getCountryName(selectedCountry),
       
@@ -1026,9 +1057,9 @@ const SalaryCalculator = () => {
                       <li key={item.id} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 dark:bg-gray-750 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors border border-gray-100 dark:border-gray-600">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <span className={`text-sm font-semibold ${item.assessmentColor}`}>{item.value}</span>
+                            <span className={`text-sm font-semibold ${item.assessmentColor}`}>{formatValueDisplay(parseFloat(item.value))}</span>
                             <span className="text-xs px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300">
-                              {item.countryCode !== 'CN' ? '$' : '¥'}{item.salary}
+                              {formatSalaryDisplay(item.salary, item.salaryUnit, item.countryCode)}
                             </span>
                           </div>
                           <div className="text-xs text-gray-500 flex items-center">
@@ -1045,6 +1076,7 @@ const SalaryCalculator = () => {
                               setFormData({
                                 ...formData,
                                 salary: item.salary,
+                                salaryUnit: item.salaryUnit, // 恢复薪资单位
                                 cityFactor: item.cityFactor,
                                 workHours: item.workHours,
                                 commuteHours: item.commuteHours,
@@ -1187,15 +1219,32 @@ const SalaryCalculator = () => {
               </label>
               <div className="flex items-center gap-2 mt-1">
                 <Wallet className="w-4 h-4 text-gray-500 dark:text-gray-400" />
-                <input
-                  type="number"
-                  value={formData.salary}
-                  onChange={(e) => handleInputChange('salary', e.target.value)}
-                  placeholder={selectedCountry !== 'CN' ? 
-                    `${t('salary_placeholder')} ${getCurrencySymbol(selectedCountry)}` : 
-                    t('salary_placeholder_cny')}
-                  className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
-                />
+                <div className="flex w-full">
+                  <input
+                    type="number"
+                    value={formData.salary}
+                    onChange={(e) => handleInputChange('salary', e.target.value)}
+                    placeholder={selectedCountry !== 'CN' ? 
+                      `${t('salary_placeholder')} ${getCurrencySymbol(selectedCountry)}` : 
+                      t('salary_placeholder_cny')}
+                    className="block w-full rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white border-r-0"
+                  />
+                  {selectedCountry === 'CN' && (
+                    <select
+                      value={formData.salaryUnit}
+                      onChange={(e) => handleInputChange('salaryUnit', e.target.value)}
+                      className="rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white border-l-0 min-w-[80px]"
+                    >
+                      <option value="wan">万元</option>
+                      <option value="yuan">元</option>
+                    </select>
+                  )}
+                  {selectedCountry !== 'CN' && (
+                    <div className="rounded-r-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-600 px-3 py-2 text-gray-500 dark:text-gray-400 border-l-0 min-w-[80px] flex items-center justify-center">
+                      {getCurrencySymbol(selectedCountry)}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -1586,7 +1635,7 @@ const SalaryCalculator = () => {
           <div>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">{t('job_value')}</div>
             <div className={`text-2xl font-semibold mt-1 ${getValueAssessment().color}`}>
-              {value.toFixed(2)}
+              {formatValueDisplay(value)}
               <span className="text-base ml-2">({getValueAssessment().text})</span>
             </div>
           </div>
