@@ -12,6 +12,20 @@ export interface SiteConfig {
     apple?: string
     shortcut?: string
   }
+  ads?: {
+    google?: {
+      enabled: boolean
+      clientId: string
+      slots: {
+        [key: string]: {
+          adSlot: string
+          adFormat: string
+          fullWidthResponsive: boolean
+          style: string
+        }
+      }
+    }
+  }
   meta: {
     title: string
     description: string

@@ -19,6 +19,7 @@ import { Services } from '@/components/sections/services'
 import { Contact } from '@/components/sections/contact'
 import { Acknowledgments } from '@/components/sections/acknowledgments'
 import { Footer } from '@/components/sections/footer'
+import { BannerAd } from '@/components/ads/google-ads'
 
 interface LandingPageProps {
   locale?: string
@@ -89,6 +90,13 @@ export function LandingPage({ locale = 'zh' }: LandingPageProps) {
           config={contentConfig.calculator}
         />
       )}
+      
+      {/* Google Ads Banner - 在计算器下方显示 */}
+      <div className="section-padding bg-[hsl(var(--accent))]/5">
+        <div className="container-custom flex justify-center">
+          <BannerAd className="max-w-4xl w-full" />
+        </div>
+      </div>
       
       {sections.sponsors?.enabled && (
         <Sponsors 

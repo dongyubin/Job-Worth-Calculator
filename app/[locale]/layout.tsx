@@ -40,6 +40,20 @@ async function getSiteConfig() {
       apple: '/apple-icon.png',
       shortcut: '/favicon-16x16.png'
     },
+    ads: {
+      google: {
+        enabled: true,
+        clientId: 'ca-pub-4173113313418612',
+        slots: {
+          banner: {
+            adSlot: '4089346212',
+            adFormat: 'auto',
+            fullWidthResponsive: true,
+            style: 'display:block'
+          }
+        }
+      }
+    },
     metadata: {
       zh: {
         title: 'Job Worth Calculator - 科学评估你的工作性价比',
