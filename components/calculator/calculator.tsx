@@ -1118,7 +1118,7 @@ const SalaryCalculator = () => {
                           </button>
                           <Link
                             href={{
-                              pathname: '/share',
+                              pathname: '/zh/share',
                               query: {
                                 value: item.value,
                                 assessment: item.assessment, // 传递翻译键而不是文本
