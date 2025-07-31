@@ -487,7 +487,7 @@ const SalaryCalculator = () => {
             assessment: item.assessment || 'rating_enter_salary',
             assessmentColor: item.assessmentColor || 'text-gray-500',
             salary: item.salary || '',
-            salaryUnit: item.salaryUnit || 'wan', // 为旧记录添加默认单位（万元）
+            salaryUnit: item.salaryUnit || 'yuan', // 为旧记录添加默认单位（元）
             countryCode: item.countryCode || 'CN',
             countryName: item.countryName || '中国',
             
@@ -527,52 +527,6 @@ const SalaryCalculator = () => {
       }
     }
   }, [formData]);
-
-  // 监听访客统计加载
-  useEffect(() => {
-    // 延迟检查busuanzi是否已加载
-    const timer = setTimeout(() => {
-      const pv = document.getElementById('busuanzi_value_site_pv');
-      const uv = document.getElementById('busuanzi_value_site_uv');
-      
-      if (pv && pv.innerText !== '') {
-        // 直接在现有数字上加上1700000（原seeyoufarm统计数据）
-        const currentCount = parseInt(pv.innerText, 10) || 0;
-        pv.innerText = (currentCount + 1700000).toString();
-        
-        // 同时增加访客数的历史数据
-        if (uv && uv.innerText !== '') {
-          const currentUV = parseInt(uv.innerText, 10) || 0;
-          uv.innerText = (currentUV + 250000).toString();
-        }
-        
-        setVisitorVisible(true);
-      } else {
-        // 如果未加载，再次尝试
-        const retryTimer = setTimeout(() => {
-          const pv = document.getElementById('busuanzi_value_site_pv');
-          const uv = document.getElementById('busuanzi_value_site_uv');
-          
-          if (pv && pv.innerText !== '') {
-            // 直接在现有数字上加上1700000（原seeyoufarm统计数据）
-            const currentCount = parseInt(pv.innerText, 10) || 0;
-            pv.innerText = (currentCount + 1700000).toString();
-            
-            // 同时增加访客数的历史数据
-            if (uv && uv.innerText !== '') {
-              const currentUV = parseInt(uv.innerText, 10) || 0;
-              uv.innerText = (currentUV + 1300000).toString();
-            }
-            
-            setVisitorVisible(true);
-          }
-        }, 2000);
-        return () => clearTimeout(retryTimer);
-      }
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, []);
 
   // 添加滚动位置保存和恢复逻辑
   useEffect(() => {
@@ -616,7 +570,7 @@ const SalaryCalculator = () => {
     
     // 根据用户选择的单位转换薪资值
     let actualSalary = Number(formData.salary);
-    if (formData.salaryUnit === 'wan') {
+    if (formData.salaryUnit === 'wan' && selectedCountry === 'CN') {
       actualSalary = actualSalary * 10000; // 万元转换为元
     }
     
@@ -1194,17 +1148,7 @@ const SalaryCalculator = () => {
           <LanguageSwitcher />
         </div>
         
-        {/* 访问统计 - 仅在客户端渲染 */}
-        {isBrowser && (
-          <div className="mt-1 text-xs text-gray-400 dark:text-gray-600 flex justify-center gap-4">
-            <span id="busuanzi_container_site_pv" className={`transition-opacity duration-300 ${visitorVisible ? 'opacity-100' : 'opacity-0'}`}>
-              {t('visits')}: <span id="busuanzi_value_site_pv"></span>
-            </span>
-            <span id="busuanzi_container_site_uv" className={`transition-opacity duration-300 ${visitorVisible ? 'opacity-100' : 'opacity-0'}`}>
-              {t('visitors')}: <span id="busuanzi_value_site_uv"></span>
-            </span>
-          </div>
-        )}
+       
       </div>
 
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl shadow-gray-200/50 dark:shadow-black/30">
