@@ -90,6 +90,12 @@ export function LandingPage({ locale = 'zh' }: LandingPageProps) {
           config={contentConfig.calculator}
         />
       )}
+
+       <div className="section-padding bg-[hsl(var(--accent))]/5">
+        <div className="container-custom flex justify-center">
+          <BannerAd className="max-w-4xl w-full" />
+        </div>
+      </div>
       
       {sections.sponsors?.enabled && (
         <Sponsors 
@@ -169,6 +175,7 @@ export function LandingPage({ locale = 'zh' }: LandingPageProps) {
       {sections.footer?.enabled && (
         <Footer messages={messages.footer} />
       )}
+
     </div>
   )
 }
