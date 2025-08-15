@@ -27,17 +27,17 @@
   },
   "metadata": {
     "zh": {
-      "title": "Job Worth Calculator - 科学评估你的工作性价比",
+      "title": "Job Worth Calculator - 这b班上得值不值·测算版，科学评估你的工作性价比",
       "description": "免费的工作价值计算器，科学评估你的工作性价比。基于薪资、工作时间、环境等多维度因素，帮你计算这班上得值不值！支持全球PPP购买力平价对比。",
       "keywords": ["工作价值计算器", "薪资计算器", "工作性价比", "PPP购买力平价", "工作评估", "职场工具", "薪酬分析"]
     },
     "ja": {
-      "title": "仕事価値計算機 - あなたの仕事のコスパを科学的に評価",
+      "title": "仕事価値計算機 - この仕事、正気でやれる？ブラック度診断，あなたの仕事のコスパを科学的に評価",
       "description": "無料の仕事価値計算机で、あなたの仕事のコストパフォーマンスを科学的に評価します。給与、労働時間、環境などの多次元要因に基づいて、この仕事が価値があるかどうかを計算します！グローバルPPP購買力平価比較対応。",
       "keywords": ["仕事価値計算機", "給与計算機", "仕事コスパ", "PPP購買力平価", "仕事評価", "職場ツール", "給与分析"]
     },
     "en": {
-      "title": "Job Worth Calculator - Scientifically Evaluate Your Job's Value",
+      "title": "Job Worth Calculator - Is My Job Worth the Grind? Scientifically Evaluate Your Job's Value",
       "description": "Free job worth calculator to scientifically evaluate your job's cost-effectiveness. Based on multi-dimensional factors like salary, working hours, and environment, calculate whether your job is worth it! Supports global PPP purchasing power parity comparison.",
       "keywords": ["job worth calculator", "salary calculator", "job value", "PPP purchasing power parity", "job evaluation", "workplace tools", "salary analysis"]
     }

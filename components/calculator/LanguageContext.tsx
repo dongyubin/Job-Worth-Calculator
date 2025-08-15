@@ -572,7 +572,7 @@ export const countryNames: Record<Language, Record<string, string>> = {
 const translations: Record<Language, Record<string, string>> = {
   zh: {
     // 标题和导航
-    'title': '这b班上得值不值·测算版',
+    'title': 'Job Worth Calculator - 这b班上得值不值·测算版',
     'github': 'GitHub',
     'email': 'Email',
     'xiaohongshu': '小红书',
@@ -819,7 +819,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   en: {
     // Title and navigation
-    'title': 'Is My Job Worth the Grind?',
+    'title': 'Job Worth Calculator - Is My Job Worth the Grind?',
     'github': 'GitHub',
     'email': 'Email',
     'xiaohongshu': 'Rednote',
@@ -1066,7 +1066,7 @@ const translations: Record<Language, Record<string, string>> = {
   },
   ja: {
     // タイトルとナビゲーション
-    'title': 'この仕事、正気でやれる？ブラック度診断',
+    'title': 'Job Worth Calculator - この仕事、正気でやれる？ブラック度診断',
     'github': 'GitHub',
     'email': 'Email',
     'xiaohongshu': '小紅書(RED)',
