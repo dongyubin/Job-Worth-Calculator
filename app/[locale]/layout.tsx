@@ -56,17 +56,17 @@ async function getSiteConfig() {
     },
     metadata: {
       zh: {
-        title: 'Job Worth Calculator - 科学评估你的工作性价比',
+        title: 'Job Worth Calculator - 这b班上得值不值·测算版，科学评估你的工作性价比',
         description: '免费的工作价值计算器，科学评估你的工作性价比。',
         keywords: ['工作价值计算器', '薪资计算器', '工作性价比']
       },
       en: {
-        title: 'Job Worth Calculator - Scientifically Evaluate Your Job\'s Value',
+        title: 'Job Worth Calculator - Is My Job Worth the Grind? Scientifically Evaluate Your Job\'s Value',
         description: 'Free job worth calculator to scientifically evaluate your job\'s cost-effectiveness.',
         keywords: ['job worth calculator', 'salary calculator', 'job value']
       },
       ja: {
-        title: '仕事価値計算機 - あなたの仕事のコスパを科学的に評価',
+        title: '仕事価値計算機 - この仕事、正気でやれる？ブラック度診断，あなたの仕事のコスパを科学的に評価',
         description: '無料の仕事価値計算机で、あなたの仕事のコストパフォーマンスを科学的に評価します。',
         keywords: ['仕事価値計算機', '給与計算機', '仕事コスパ']
       }
