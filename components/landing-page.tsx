@@ -91,11 +91,9 @@ export function LandingPage({ locale = 'zh' }: LandingPageProps) {
         />
       )}
 
-       <div className="section-padding bg-[hsl(var(--accent))]/5">
-        <div className="container-custom flex justify-center">
-          <BannerAd className="max-w-4xl w-full" />
-        </div>
-      </div>
+      
+      <BannerAd className="max-w-4xl w-full" />
+       
       
       {sections.sponsors?.enabled && (
         <Sponsors 

@@ -19,9 +19,9 @@
 </div>
 
 <p>
-   <a href="#english"><img src="https://img.shields.io/badge/English-blue?style=for-the-badge" alt="English" /></a>
-   &nbsp;&nbsp;
    <a href="#中文"><img src="https://img.shields.io/badge/中文-red?style=for-the-badge" alt="中文" /></a>
+   &nbsp;&nbsp;
+   <a href="#english"><img src="https://img.shields.io/badge/English-blue?style=for-the-badge" alt="English" /></a>
    &nbsp;&nbsp;
    <a href="#japanese"><img src="https://img.shields.io/badge/日本語-green?style=for-the-badge" alt="日本語" /></a>
 </p>

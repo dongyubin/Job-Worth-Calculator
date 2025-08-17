@@ -16,9 +16,9 @@ export function middleware(request: NextRequest) {
       return NextResponse.next()
     }
     
-    // If accessing root path, redirect to Chinese version
+    // If accessing root path, show English version without /en prefix
     if (pathname === '/') {
-      return NextResponse.redirect(new URL('/zh', request.url))
+      return NextResponse.next()
     }
     
     // Check if the pathname starts with a supported locale
@@ -26,9 +26,9 @@ export function middleware(request: NextRequest) {
       locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
     )
     
-    // If no locale found, redirect to Chinese version
+    // If no locale found, redirect to English version
     if (!pathnameHasLocale) {
-      return NextResponse.redirect(new URL(`/zh${pathname}`, request.url))
+      return NextResponse.redirect(new URL(`/en${pathname}`, request.url))
     }
     
     return NextResponse.next()

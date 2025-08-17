@@ -18,7 +18,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
 
   // 语言显示名称映射
   const languageNames: Record<string, string> = {
-    'zh': '中文',
+    'zh': '中文简体',
     'en': 'English',
     'ja': '日本語'
   }

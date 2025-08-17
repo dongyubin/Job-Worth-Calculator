@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useConfig } from '@/components/providers/config-provider'
 import Script from 'next/script'
 
@@ -17,6 +17,8 @@ declare global {
 
 export function GoogleAds({ slotName = 'banner', className = '' }: GoogleAdsProps) {
   const { siteConfig } = useConfig()
+  const adRef = useRef<HTMLDivElement>(null)
+  const hasLoaded = useRef(false)
   
   // 检查是否启用了Google Ads
   if (!siteConfig?.ads?.google?.enabled) {
@@ -33,8 +35,14 @@ export function GoogleAds({ slotName = 'banner', className = '' }: GoogleAdsProp
   
   useEffect(() => {
     try {
-      if (window.adsbygoogle) {
-        window.adsbygoogle.push({})
+      // 确保广告元素存在且未被加载过
+      if (window.adsbygoogle && adRef.current && !hasLoaded.current) {
+        // 检查该广告元素是否已经有广告
+        const adElement = adRef.current.querySelector('.adsbygoogle')
+        if (adElement && !adElement.hasAttribute('data-adsbygoogle-status')) {
+          window.adsbygoogle.push({})
+          hasLoaded.current = true
+        }
       }
     } catch (error) {
       console.error('Google Ads error:', error)
@@ -42,7 +50,7 @@ export function GoogleAds({ slotName = 'banner', className = '' }: GoogleAdsProp
   }, [])
   
   return (
-    <div className={`google-ads-container ${className}`}>
+    <div ref={adRef} className={`google-ads-container ${className}`}>
       {/* Google AdSense Script */}
       <Script
         async
