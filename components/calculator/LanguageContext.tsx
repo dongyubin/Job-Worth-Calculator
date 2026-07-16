@@ -839,6 +839,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Title and navigation
     'title': 'Job Worth Calculator - Is My Job Worth the Grind?',
+    'title_subtitle': 'Calculate whether your salary, hours, commute, and workplace conditions make your job truly worth it.',
     'github': 'GitHub',
     'email': 'Email',
     'xiaohongshu': 'Rednote',

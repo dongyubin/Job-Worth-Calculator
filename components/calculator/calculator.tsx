@@ -1059,7 +1059,11 @@ const SalaryCalculator = () => {
     <div className="max-w-2xl mx-auto p-4 sm:p-6">
       <div className="mb-4 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 py-2">{t('title')}</h1>
-        
+        {language === 'en' && (
+          <p className="mx-auto mb-4 max-w-xl text-sm sm:text-base leading-relaxed text-[hsl(var(--muted-foreground))]">
+            {t('title_subtitle')}
+          </p>
+        )}
         
         <div className="flex items-center justify-center gap-3 mb-2">
           
