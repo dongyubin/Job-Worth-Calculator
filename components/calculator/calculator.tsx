@@ -4,7 +4,6 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Wallet, Github, FileText, Book, History, Eye , Star} from 'lucide-react'; // 添加新图标
 import Link from 'next/link'; // 导入Link组件用于导航
 import { useLanguage } from './LanguageContext';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { countryNames } from './LanguageContext';
 
 // 定义PPP转换因子映射表
@@ -736,14 +735,14 @@ const SalaryCalculator = () => {
   // 格式化薪资显示，包含单位信息
   const formatSalaryDisplay = useCallback((salary: string, salaryUnit: 'yuan' | 'wan', countryCode: string) => {
     const currencySymbol = countryCode !== 'CN' ? '$' : '¥';
-    const unitText = salaryUnit === 'wan' ? '万元' : '元';
+    const unitText = salaryUnit === 'wan' ? t('salary_unit_wan') : t('salary_unit_yuan');
     
     if (countryCode !== 'CN') {
       return `${currencySymbol}${salary}`;
     } else {
       return `${salary}${unitText}`;
     }
-  }, []);
+  }, [t]);
   
   // 获取评级的翻译键，用于分享链接
   const getValueAssessmentKey = useCallback(() => {
@@ -772,8 +771,8 @@ const SalaryCalculator = () => {
             key={option.value}
             className={`px-3 py-2 rounded-md text-sm transition-colors
               ${value === option.value 
-                ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 font-medium' 
-                : 'bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'}`}
+                ? 'bg-[hsl(var(--primary))]/15 text-[hsl(var(--primary))] dark:bg-[hsl(var(--primary))]/20 dark:text-[hsl(var(--primary))] font-medium'
+                : 'bg-[hsl(var(--muted))]/45 text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--muted))]/75 hover:text-[hsl(var(--foreground))]'}`}
             onClick={(e) => {
               e.preventDefault(); // 阻止默认行为
               e.stopPropagation(); // 阻止事件冒泡
@@ -977,7 +976,7 @@ const SalaryCalculator = () => {
         {/* 历史记录列表 - 仅在客户端渲染 */}
         {isBrowser && showHistory && (
           <div className="relative z-10">
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-72 md:w-96 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 max-h-80 overflow-y-auto">
+            <div className="calculator-popover absolute left-1/2 transform -translate-x-1/2 mt-1 w-72 md:w-96 rounded-lg max-h-80 overflow-y-auto">
               <div className="p-3">
                 <div className="flex justify-between items-center mb-3 border-b pb-2 border-gray-200 dark:border-gray-700">
                   <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 flex items-center">
@@ -1008,7 +1007,7 @@ const SalaryCalculator = () => {
                 {history.length > 0 ? (
                   <ul className="space-y-2">
                     {history.map((item) => (
-                      <li key={item.id} className="flex items-center justify-between p-2 rounded-lg bg-gray-50 dark:bg-gray-750 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors border border-gray-100 dark:border-gray-600">
+                      <li key={item.id} className="flex items-center justify-between p-2 rounded-lg bg-[hsl(var(--muted))]/45 hover:bg-[hsl(var(--primary))]/10 transition-colors border border-[hsl(var(--border))]/70">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
                             <span className={`text-sm font-semibold ${item.assessmentColor}`}>{formatValueDisplay(parseFloat(item.value))}</span>
@@ -1072,7 +1071,7 @@ const SalaryCalculator = () => {
                           </button>
                           <Link
                             href={{
-                              pathname: '/zh/share',
+                              pathname: `/${language}/share`,
                               query: {
                                 value: item.value,
                                 assessment: item.assessment, // 传递翻译键而不是文本
@@ -1144,14 +1143,9 @@ const SalaryCalculator = () => {
           </div>
         )}
         
-        <div className="flex justify-center mb-2">
-          <LanguageSwitcher />
-        </div>
-        
-       
       </div>
 
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl shadow-gray-200/50 dark:shadow-black/30">
+      <div className="calculator-panel">
         <div className="p-6 space-y-8">
           {/* 薪资与工作时间 section */}
           <div className="space-y-6">
@@ -1179,8 +1173,8 @@ const SalaryCalculator = () => {
                       onChange={(e) => handleInputChange('salaryUnit', e.target.value)}
                       className="rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white border-l-0 min-w-[80px]"
                     >
-                      <option value="wan">万元</option>
-                      <option value="yuan">元</option>
+                      <option value="wan">{t('salary_unit_wan')}</option>
+                      <option value="yuan">{t('salary_unit_yuan')}</option>
                     </select>
                   )}
                   {selectedCountry !== 'CN' && (
@@ -1564,7 +1558,7 @@ const SalaryCalculator = () => {
       </div>
 
       {/* 结果卡片优化 */}
-      <div ref={shareResultsRef} className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-inner">
+      <div ref={shareResultsRef} className="calculator-result-panel">
         <div className="grid grid-cols-3 gap-8">
           <div>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">{t('working_days_per_year')}</div>
@@ -1590,7 +1584,7 @@ const SalaryCalculator = () => {
           {formData.salary && Number(formData.salary) > 0 ? (
             <Link
               href={{
-                pathname: '/zh/share',
+                pathname: `/${language}/share`,
                 query: {
                   value: value.toFixed(2),
                   assessment: getValueAssessmentKey(),

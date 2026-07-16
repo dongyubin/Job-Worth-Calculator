@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Globe } from 'lucide-react'
 
@@ -18,6 +19,29 @@ export function LanguageSelector({
   type,
   onClose,
 }: LanguageSelectorProps) {
+  const [currentPathWithQuery, setCurrentPathWithQuery] = useState('/')
+
+  useEffect(() => {
+    setCurrentPathWithQuery(`${window.location.pathname}${window.location.search}`)
+  }, [currentLocale])
+
+  const getLocaleHref = (locale: string) => {
+    const queryIndex = currentPathWithQuery.indexOf('?')
+    const currentPath = queryIndex === -1 ? currentPathWithQuery : currentPathWithQuery.slice(0, queryIndex)
+    const queryString = queryIndex === -1 ? '' : currentPathWithQuery.slice(queryIndex + 1)
+    const segments = currentPath.split('/')
+    let localizedPath: string
+
+    if (segments[1] && supportedLocales.includes(segments[1])) {
+      segments[1] = locale
+      localizedPath = segments.join('/') || `/${locale}`
+    } else {
+      localizedPath = currentPath === '/' ? `/${locale}` : `/${locale}${currentPath}`
+    }
+
+    return queryString ? `${localizedPath}?${queryString}` : localizedPath
+  }
+
   if (type === 'desktop') {
     return (
       <div className="relative group">
@@ -35,7 +59,7 @@ export function LanguageSelector({
           {supportedLocales.map((locale) => (
             <Link
               key={locale}
-              href={`/${locale}`}
+              href={getLocaleHref(locale)}
               replace
               className={`block w-full px-4 py-2 text-left text-sm transition-colors duration-200 
                         hover:bg-[hsl(var(--accent))]/50 ${
@@ -62,7 +86,7 @@ export function LanguageSelector({
           {supportedLocales.map((locale) => (
             <Link
               key={locale}
-              href={`/${locale}`}
+              href={getLocaleHref(locale)}
               replace
               onClick={onClose}
               className={`flex-1 min-w-[80px] px-4 py-2 text-sm rounded-lg transition-all duration-200 text-center ${

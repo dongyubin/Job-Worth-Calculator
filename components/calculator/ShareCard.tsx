@@ -624,7 +624,7 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${getBackground()} flex flex-col items-center justify-start p-4 md:p-8 transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'} dark:text-white`}>
+    <div className={`w-full flex flex-col items-center justify-start transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
       {/* 返回按钮 */}
       <div className="w-full max-w-4xl mb-4 md:mb-6">
         <Link href="/" className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
@@ -633,7 +633,8 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
         </Link>
       </div>
       
-      <div ref={reportRef} className="w-full max-w-4xl bg-white rounded-xl shadow-xl p-4 md:p-10">
+      <div className={`report-stage w-full max-w-5xl bg-gradient-to-br ${getBackground()}`}>
+        <div ref={reportRef} className="report-document w-full max-w-4xl mx-auto rounded-xl p-4 md:p-10">
         {/* 标题 - 移动端更紧凑 */}
         <div className="mb-5 md:mb-10 text-center">
           <div className="text-4xl md:text-6xl mb-2 md:mb-4">{isClient ? getEmoji(parseFloat(props.value)) : '😊'}</div>
@@ -688,6 +689,7 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
         <div className="mt-6 md:mt-10 text-center text-gray-500 space-y-0.5 text-xs md:text-sm">
           <div>{t('share_custom_made')}</div>
           <div>jobworthcalculator.wwkejishe.top</div>
+        </div>
         </div>
       </div>
       
@@ -880,4 +882,4 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
   );
 };
 
-export default ShareCard; 
+export default ShareCard;

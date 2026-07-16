@@ -4,17 +4,22 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useConfig } from '@/components/providers/config-provider'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
-import { Menu, X, Sparkles, ArrowRight, Globe } from 'lucide-react'
+import { Menu, X, Sparkles, ArrowRight } from 'lucide-react'
 import { LanguageSelector } from '@/components/ui/language-selector'
+import { useLanguage } from '@/components/calculator/LanguageContext'
 
 interface NavbarProps {
   messages: any
   currentLocale?: string
+  linkMode?: 'current' | 'home'
 }
 
-export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
+export function Navbar({ messages, currentLocale = 'zh', linkMode = 'current' }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const { siteConfig, contentConfig } = useConfig()
+  const { t } = useLanguage()
+  const localeHomeHref = `/${currentLocale}`
+  const sectionHref = (hash: string) => linkMode === 'home' ? `${localeHomeHref}${hash}` : hash
 
   // 语言显示名称映射
   const languageNames: Record<string, string> = {
@@ -27,14 +32,14 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
   const supportedLocales = siteConfig?.locales || ['zh', 'en', 'ja']
 
   const navigation = [
-    { name: messages.nav.home, href: '#calculator' },
-    ...(contentConfig?.sections?.hero?.enabled ? [{ name: messages.nav.hero, href: '#hero' }] : []),
-    ...(contentConfig?.sections?.features?.enabled ? [{ name: messages.nav.features, href: '#features' }] : []),
-    ...(contentConfig?.sections?.pricing?.enabled ? [{ name: messages.nav.pricing, href: '#pricing' }] : []),
-    ...(contentConfig?.sections?.testimonials?.enabled ? [{ name: messages.nav.testimonials, href: '#testimonials' }] : []),
-    ...(contentConfig?.sections?.faq?.enabled ? [{ name: messages.nav.faq, href: '#faq' }] : []),
-    ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.nav.acknowledgments, href: '#acknowledgments' }] : []),
-    ...(contentConfig?.sections?.contact?.enabled ? [{ name: messages.nav.contact, href: '#contact' }] : []),
+    { name: messages.nav.home, href: sectionHref('#calculator') },
+    ...(contentConfig?.sections?.hero?.enabled ? [{ name: messages.nav.hero, href: sectionHref('#hero') }] : []),
+    ...(contentConfig?.sections?.features?.enabled ? [{ name: messages.nav.features, href: sectionHref('#features') }] : []),
+    ...(contentConfig?.sections?.pricing?.enabled ? [{ name: messages.nav.pricing, href: sectionHref('#pricing') }] : []),
+    ...(contentConfig?.sections?.testimonials?.enabled ? [{ name: messages.nav.testimonials, href: sectionHref('#testimonials') }] : []),
+    ...(contentConfig?.sections?.faq?.enabled ? [{ name: messages.nav.faq, href: sectionHref('#faq') }] : []),
+    ...(contentConfig?.sections?.acknowledgments?.enabled ? [{ name: messages.nav.acknowledgments, href: sectionHref('#acknowledgments') }] : []),
+    ...(contentConfig?.sections?.contact?.enabled ? [{ name: messages.nav.contact, href: sectionHref('#contact') }] : []),
   ]
 
   return (
@@ -44,7 +49,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
           {/* Enhanced Logo */}
           <div className="flex-shrink-0">
             <Link 
-              href="/" 
+              href={localeHomeHref}
               className="flex items-center gap-2 text-2xl font-bold text-[hsl(var(--foreground))] 
                        hover:text-[hsl(var(--primary))] transition-colors duration-300 group"
             >
@@ -94,7 +99,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
           {/* Enhanced CTA Button */}
           <div className="hidden md:block">
             <a 
-              href="#calculator" 
+              href={sectionHref('#calculator')}
               className="btn btn-gradient btn-default group relative overflow-hidden"
             >
               <Sparkles className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
@@ -152,7 +157,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
             {/* Enhanced mobile CTA */}
             <div className="px-4 py-3">
               <a 
-                href="#calculator" 
+                href={sectionHref('#calculator')}
                 className="btn btn-gradient btn-default w-full group justify-center"
                 onClick={() => setIsOpen(false)}
               >
@@ -174,7 +179,7 @@ export function Navbar({ messages, currentLocale = 'zh' }: NavbarProps) {
             {/* Mobile Theme Toggle */}
             <div className="px-4 py-3 border-t border-[hsl(var(--border))]/50">
               <div className="text-sm text-[hsl(var(--muted-foreground))] mb-3">
-                主题设置
+                {t('theme_settings')}
               </div>
               <ThemeToggle />
             </div>

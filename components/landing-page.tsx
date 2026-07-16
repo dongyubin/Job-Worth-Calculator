@@ -68,7 +68,7 @@ export function LandingPage({ locale = 'zh' }: LandingPageProps) {
   const sections = contentConfig.sections
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="app-page">
       {sections.navbar?.enabled && (
         <Navbar 
           messages={messages} 

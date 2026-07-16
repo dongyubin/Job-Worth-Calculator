@@ -990,6 +990,88 @@ body {
     @apply bg-[hsl(var(--background))]/80 backdrop-blur-md border border-[hsl(var(--border))]/50
            shadow-lg shadow-[hsl(var(--foreground))]/5;
   }
+
+  .dark .glass-effect {
+    @apply bg-[hsl(var(--background))]/90 border-[hsl(var(--border))]/70 shadow-black/30;
+  }
+
+  .app-page {
+    @apply min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))] relative overflow-x-hidden;
+    background-image:
+      radial-gradient(circle at 12% -10%, hsl(var(--primary) / 0.08), transparent 32rem),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.22));
+  }
+
+  .dark .app-page {
+    background-image:
+      radial-gradient(circle at 20% -10%, hsl(var(--primary) / 0.16), transparent 34rem),
+      radial-gradient(circle at 85% 15%, hsl(var(--gradient-from) / 0.08), transparent 28rem),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)) 42%, hsl(var(--muted) / 0.28));
+  }
+
+  .calculator-panel {
+    @apply rounded-xl border border-[hsl(var(--border))]/70 bg-[hsl(var(--card))]/95
+           text-[hsl(var(--card-foreground))] shadow-xl shadow-[hsl(var(--foreground))]/10;
+  }
+
+  .dark .calculator-panel {
+    @apply bg-[hsl(var(--card))]/85 shadow-black/35;
+  }
+
+  .calculator-panel input,
+  .calculator-panel select {
+    @apply bg-[hsl(var(--background))]/80 text-[hsl(var(--foreground))]
+           border-[hsl(var(--border))] placeholder:text-[hsl(var(--muted-foreground))];
+  }
+
+  .dark .calculator-panel input,
+  .dark .calculator-panel select {
+    @apply bg-[hsl(var(--muted))]/55 border-[hsl(var(--border))]/90;
+  }
+
+  .calculator-popover {
+    @apply bg-[hsl(var(--card))]/95 border-[hsl(var(--border))]/70 text-[hsl(var(--card-foreground))]
+           shadow-xl shadow-[hsl(var(--foreground))]/10 backdrop-blur-md;
+  }
+
+  .dark .calculator-popover {
+    @apply bg-[hsl(var(--card))]/95 shadow-black/40;
+  }
+
+  .calculator-result-panel {
+    @apply rounded-xl border border-[hsl(var(--border))]/70 bg-[hsl(var(--muted))]/45 p-6 shadow-inner;
+  }
+
+  .dark .calculator-result-panel {
+    @apply bg-[hsl(var(--muted))]/35 shadow-black/25;
+  }
+
+  .report-page {
+    @apply min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    background-image:
+      radial-gradient(circle at 50% -18%, hsl(var(--primary) / 0.12), transparent 32rem),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.25));
+  }
+
+  .dark .report-page {
+    background-image:
+      radial-gradient(circle at 50% -18%, hsl(var(--primary) / 0.18), transparent 34rem),
+      radial-gradient(circle at 12% 30%, hsl(var(--gradient-from) / 0.08), transparent 28rem),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)) 45%, hsl(var(--muted) / 0.3));
+  }
+
+  .report-stage {
+    @apply rounded-2xl border border-[hsl(var(--border))]/70 bg-[hsl(var(--card))]/55
+           p-3 shadow-2xl shadow-[hsl(var(--foreground))]/10 backdrop-blur-sm md:p-6;
+  }
+
+  .dark .report-stage {
+    @apply border-white/10 bg-white/[0.03] shadow-black/45;
+  }
+
+  .report-document {
+    @apply bg-white text-gray-900 ring-1 ring-black/5 shadow-2xl shadow-black/15;
+  }
   
   .glass-card {
     @apply glass-effect rounded-2xl p-6 hover:shadow-xl hover:backdrop-blur-lg 

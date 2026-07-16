@@ -1,10 +1,9 @@
 "use client";
 
-import { useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import React, { Suspense } from 'react';
-import { LanguageProvider } from '@/components/calculator/LanguageContext';
-import { LanguageSwitcher } from '@/components/calculator/LanguageSwitcher';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Navbar } from '@/components/sections/navbar';
 
 // 动态导入ShareCard组件，禁用SSR
 const ShareCard = dynamic(() => import('@/components/calculator/ShareCard'), { ssr: false });
@@ -112,18 +111,41 @@ function ShareLoading() {
 
 // 主页面组件
 export default function SharePage() {
+  const params = useParams<{ locale: string }>();
+  const locale = params.locale || 'zh';
+  const [messages, setMessages] = useState<any>(null);
+
+  useEffect(() => {
+    const loadMessages = async () => {
+      try {
+        const response = await fetch(`/api/config/messages?locale=${locale}`);
+        if (response.ok) {
+          setMessages(await response.json());
+        }
+      } catch (error) {
+        console.error('Failed to load messages:', error);
+      }
+    };
+
+    loadMessages();
+  }, [locale]);
+
   return (
-    <LanguageProvider>
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-6">
+    <>
+      {messages && (
+        <Navbar
+          messages={messages}
+          currentLocale={locale}
+          linkMode="home"
+        />
+      )}
+      <main className="report-page pt-28 pb-6">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center mb-4">
-            <LanguageSwitcher />
-          </div>
           <Suspense fallback={<ShareLoading />}>
             <ShareCardWrapper />
           </Suspense>
         </div>
       </main>
-    </LanguageProvider>
+    </>
   );
-} 
+}

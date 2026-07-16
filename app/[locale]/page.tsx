@@ -1,4 +1,3 @@
-import { LanguageProvider } from '@/components/calculator/LanguageContext'
 import { LandingPage } from '@/components/landing-page'
 
 interface HomePageProps {
@@ -10,9 +9,5 @@ interface HomePageProps {
 export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params
   
-  return (
-    <LanguageProvider>
-      <LandingPage locale={locale} />
-    </LanguageProvider>
-  )
+  return <LandingPage locale={locale} />
 }

@@ -3,11 +3,13 @@
 import { useState } from 'react'
 import { useTheme as useNextTheme } from 'next-themes'
 import { useTheme, colorThemes, type ColorTheme } from '@/components/providers/theme-provider'
+import { useLanguage } from '@/components/calculator/LanguageContext'
 import { Palette, Sun, Moon, ChevronDown, Check } from 'lucide-react'
 
 export function ThemeToggle() {
   const { theme, setTheme } = useNextTheme()
   const { colorTheme, setColorTheme } = useTheme()
+  const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -15,12 +17,13 @@ export function ThemeToggle() {
       {/* 主按钮 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={t('theme_settings')}
         className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[hsl(var(--border))] 
                    bg-[hsl(var(--background))]/80 backdrop-blur-sm hover:bg-[hsl(var(--muted))]/50 
                    transition-all duration-200 text-sm font-medium"
       >
         <Palette className="w-4 h-4 text-[hsl(var(--primary))]" />
-        <span className="hidden sm:inline text-[hsl(var(--foreground))]">主题</span>
+        <span className="hidden sm:inline text-[hsl(var(--foreground))]">{t('theme')}</span>
         <ChevronDown className={`w-4 h-4 text-[hsl(var(--muted-foreground))] transition-transform duration-200 ${
           isOpen ? 'rotate-180' : ''
         }`} />
@@ -41,7 +44,7 @@ export function ThemeToggle() {
             
             {/* 明暗模式切换 */}
             <div className="mb-4">
-              <h4 className="text-sm font-medium text-[hsl(var(--foreground))] mb-3">明暗模式</h4>
+              <h4 className="text-sm font-medium text-[hsl(var(--foreground))] mb-3">{t('theme_mode')}</h4>
               <div className="flex gap-2">
                 <button
                   onClick={() => setTheme('light')}
@@ -52,7 +55,7 @@ export function ThemeToggle() {
                   }`}
                 >
                   <Sun className="w-4 h-4" />
-                  <span className="text-xs">浅色</span>
+                  <span className="text-xs">{t('theme_light')}</span>
                   {theme === 'light' && <Check className="w-3 h-3 ml-auto" />}
                 </button>
                 
@@ -65,7 +68,7 @@ export function ThemeToggle() {
                   }`}
                 >
                   <Moon className="w-4 h-4" />
-                  <span className="text-xs">深色</span>
+                  <span className="text-xs">{t('theme_dark')}</span>
                   {theme === 'dark' && <Check className="w-3 h-3 ml-auto" />}
                 </button>
               </div>
@@ -73,7 +76,7 @@ export function ThemeToggle() {
 
             {/* 颜色主题选择 */}
             <div>
-              <h4 className="text-sm font-medium text-[hsl(var(--foreground))] mb-3">颜色主题</h4>
+              <h4 className="text-sm font-medium text-[hsl(var(--foreground))] mb-3">{t('theme_color')}</h4>
               <div className="grid grid-cols-2 gap-2">
                 {Object.entries(colorThemes).map(([key, themeOption]) => {
                   const isActive = colorTheme === key
@@ -97,7 +100,7 @@ export function ThemeToggle() {
                         <div className={`text-xs font-medium ${
                           isActive ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--foreground))]'
                         }`}>
-                          {themeOption.name}
+                          {t(`theme_color_${key}`)}
                         </div>
                       </div>
                       
@@ -112,7 +115,7 @@ export function ThemeToggle() {
             <div className="mt-4 pt-3 border-t border-[hsl(var(--border))]">
               <div className="flex items-center gap-2 text-xs text-[hsl(var(--muted-foreground))] justify-center">
                 <div className="w-2 h-2 bg-[hsl(var(--success))] rounded-full animate-pulse"></div>
-                主题更改将立即生效
+                {t('theme_applies_immediately')}
               </div>
             </div>
           </div>
