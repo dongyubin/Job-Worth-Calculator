@@ -33,6 +33,7 @@ export function Navbar({ messages, currentLocale = 'zh', linkMode = 'current' }:
 
   const navigation = [
     { name: messages.nav.home, href: sectionHref('#calculator') },
+    { name: messages.nav.blog || 'Blog', href: `${localeHomeHref}/blog` },
     ...(contentConfig?.sections?.hero?.enabled ? [{ name: messages.nav.hero, href: sectionHref('#hero') }] : []),
     ...(contentConfig?.sections?.features?.enabled ? [{ name: messages.nav.features, href: sectionHref('#features') }] : []),
     ...(contentConfig?.sections?.pricing?.enabled ? [{ name: messages.nav.pricing, href: sectionHref('#pricing') }] : []),

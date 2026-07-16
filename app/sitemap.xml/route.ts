@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { blogSlugs } from '@/lib/blog'
 
 export async function GET() {
   const baseUrl = 'https://jobworthcalculator.wwkejishe.top'
@@ -7,6 +8,8 @@ export async function GET() {
   // Main pages for each locale
   const pages = [
     '', // home page
+    '/blog',
+    ...blogSlugs.map(slug => `/blog/${slug}`),
     '/calculator',
     '/share',
     // Add more pages as needed
