@@ -26,6 +26,7 @@ const LanguageContext = createContext<LanguageContextType>(defaultContext);
 export const countryNames: Record<Language, Record<string, string>> = {
   zh: {
     'AF': '阿富汗',
+    'AE': '阿拉伯联合酋长国（阿联酋）',
     'AO': '安哥拉',
     'AL': '阿尔巴尼亚',
     'AR': '阿根廷',
@@ -207,6 +208,7 @@ export const countryNames: Record<Language, Record<string, string>> = {
   },
   en: {
     'AF': 'Afghanistan',
+    'AE': 'United Arab Emirates (UAE)',
     'AO': 'Angola',
     'AL': 'Albania',
     'AR': 'Argentina',
@@ -388,6 +390,7 @@ export const countryNames: Record<Language, Record<string, string>> = {
   },
   ja: {
     'AF': 'アフガニスタン',
+    'AE': 'アラブ首長国連邦',
     'AL': 'アルバニア',
     'DZ': 'アルジェリア',
     'AO': 'アンゴラ',
@@ -615,6 +618,8 @@ const translations: Record<Language, Record<string, string>> = {
     'ppp_common_regions': '常见地区：中国大陆:4.19, 日本:102.59, 美国:1.00, 新加坡:0.84',
     'view_more': '查看更多',
     'country_selection': '工作国家/地区',
+    'country_search_placeholder': '搜索国家/地区',
+    'country_search_no_results': '未找到匹配国家/地区',
     'selected_ppp': '当前PPP值',
     'work_days_per_week': '每周工作天数/d',
     'wfh_days_per_week': '周WFH天数/d',
@@ -876,6 +881,8 @@ const translations: Record<Language, Record<string, string>> = {
     'ppp_common_regions': 'Common regions: China:4.19, Japan:102.59, US:1.00, Singapore:0.84',
     'view_more': 'View more',
     'country_selection': 'Work Country/Region',
+    'country_search_placeholder': 'Search country/region',
+    'country_search_no_results': 'No matching country/region',
     'selected_ppp': 'Current PPP value',
     'work_days_per_week': 'Workdays/week',
     'wfh_days_per_week': 'WFH days/week',
@@ -1137,6 +1144,8 @@ const translations: Record<Language, Record<string, string>> = {
     'ppp_common_regions': '主な地域：中国:4.19、日本:102.59、米国:1.00、シンガポール:0.84',
     'view_more': 'もっと見る',
     'country_selection': '勤務国・地域',
+    'country_search_placeholder': '国・地域を検索',
+    'country_search_no_results': '一致する国・地域がありません',
     'selected_ppp': '現在のPPP値',
     'work_days_per_week': '週間勤務日数',
     'wfh_days_per_week': '週間リモートワーク日数',

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { Wallet, Github, FileText, Book, History, Eye , Star} from 'lucide-react'; // 添加新图标
+import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { Wallet, Github, FileText, Book, History, Eye , Star, Search, ChevronDown, Check } from 'lucide-react'; // 添加新图标
 import Link from 'next/link'; // 导入Link组件用于导航
 import { useLanguage } from './LanguageContext';
 import { countryNames } from './LanguageContext';
@@ -9,6 +9,7 @@ import { countryNames } from './LanguageContext';
 // 定义PPP转换因子映射表
 const pppFactors: Record<string, number> = {
   'AF': 18.71,
+  'AE': 2.06,
   'AO': 167.66,
   'AL': 41.01,
   'AR': 28.67,
@@ -192,6 +193,7 @@ const pppFactors: Record<string, number> = {
 // 添加各国货币符号映射
 const currencySymbols: Record<string, string> = {
   'AF': '؋', // 阿富汗尼
+  'AE': 'د.إ', // 阿联酋迪拉姆
   'AL': 'L', // 阿尔巴尼亚列克
   'DZ': 'د.ج', // 阿尔及利亚第纳尔
   'AO': 'Kz', // 安哥拉宽扎
@@ -299,6 +301,10 @@ const currencySymbols: Record<string, string> = {
   'VN': '₫', // 越南盾
   'ZA': 'R', // 南非兰特
   // 默认其他国家使用美元符号
+};
+
+const countrySearchAliases: Record<string, string[]> = {
+  AE: ['UAE', '阿联酋', '阿拉伯联合酋长国', 'United Arab Emirates', 'Emirates', 'アラブ首長国連邦'],
 };
 
 // 定义历史记录项的接口
@@ -443,6 +449,11 @@ const SalaryCalculator = () => {
   const [showPPPInput, setShowPPPInput] = useState(false);
   // 修改为国家代码，默认为中国
   const [selectedCountry, setSelectedCountry] = useState<string>('CN');
+  const [isCountrySelectorOpen, setIsCountrySelectorOpen] = useState(false);
+  const [countrySearchTerm, setCountrySearchTerm] = useState('');
+  const [highlightedCountryIndex, setHighlightedCountryIndex] = useState(0);
+  const countrySelectorRef = useRef<HTMLDivElement>(null);
+  const countrySearchInputRef = useRef<HTMLInputElement>(null);
   
   // 初始化时从localStorage加载国家设置
   useEffect(() => {
@@ -456,12 +467,12 @@ const SalaryCalculator = () => {
   }, []);
   
   // 当国家选择改变时保存到localStorage
-  const handleCountryChange = (countryCode: string) => {
+  const handleCountryChange = useCallback((countryCode: string) => {
     setSelectedCountry(countryCode);
     if (typeof window !== 'undefined') {
       localStorage.setItem('selectedCountry', countryCode);
     }
-  };
+  }, []);
   
   const [result, setResult] = useState<Result | null>(null);
   const [showPPPList, setShowPPPList] = useState(false);
@@ -857,6 +868,97 @@ const SalaryCalculator = () => {
     }
     return countryNames.zh[countryCode] || countryCode || '未知';
   }, [language]);
+
+  const countryOptions = useMemo(() => {
+    return Object.keys(pppFactors)
+      .sort((a, b) => {
+        if (a === 'CN') return -1;
+        if (b === 'CN') return 1;
+        return new Intl.Collator([language, 'zh', 'ja', 'en']).compare(getCountryName(a), getCountryName(b));
+      })
+      .map(code => ({
+        code,
+        name: getCountryName(code),
+        ppp: pppFactors[code],
+        aliases: countrySearchAliases[code] || [],
+      }));
+  }, [getCountryName, language]);
+
+  const filteredCountryOptions = useMemo(() => {
+    const keyword = countrySearchTerm.trim().toLocaleLowerCase();
+    if (!keyword) return countryOptions;
+
+    return countryOptions.filter(option => {
+      return option.name.toLocaleLowerCase().includes(keyword)
+        || option.code.toLocaleLowerCase().includes(keyword)
+        || option.aliases.some(alias => alias.toLocaleLowerCase().includes(keyword));
+    });
+  }, [countryOptions, countrySearchTerm]);
+
+  const selectedCountryOption = useMemo(() => {
+    return countryOptions.find(option => option.code === selectedCountry) || countryOptions[0];
+  }, [countryOptions, selectedCountry]);
+
+  const selectCountry = useCallback((countryCode: string) => {
+    handleCountryChange(countryCode);
+    setIsCountrySelectorOpen(false);
+    setCountrySearchTerm('');
+    setHighlightedCountryIndex(0);
+  }, [handleCountryChange]);
+
+  useEffect(() => {
+    setHighlightedCountryIndex(0);
+  }, [countrySearchTerm, language]);
+
+  useEffect(() => {
+    if (!isCountrySelectorOpen) return;
+    countrySearchInputRef.current?.focus();
+  }, [isCountrySelectorOpen]);
+
+  useEffect(() => {
+    if (!isCountrySelectorOpen || typeof document === 'undefined') return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!countrySelectorRef.current?.contains(event.target as Node)) {
+        setIsCountrySelectorOpen(false);
+        setCountrySearchTerm('');
+        setHighlightedCountryIndex(0);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isCountrySelectorOpen]);
+
+  const handleCountrySearchKeyDown = useCallback((event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setIsCountrySelectorOpen(false);
+      setCountrySearchTerm('');
+      setHighlightedCountryIndex(0);
+      return;
+    }
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setHighlightedCountryIndex(prev => Math.min(prev + 1, Math.max(filteredCountryOptions.length - 1, 0)));
+      return;
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      setHighlightedCountryIndex(prev => Math.max(prev - 1, 0));
+      return;
+    }
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const option = filteredCountryOptions[highlightedCountryIndex] || filteredCountryOptions[0];
+      if (option) {
+        selectCountry(option.code);
+      }
+    }
+  }, [filteredCountryOptions, highlightedCountryIndex, selectCountry]);
   
   // 保存当前记录到历史中
   const saveToHistory = useCallback(() => {
@@ -1196,24 +1298,82 @@ const SalaryCalculator = () => {
                   </span>
                 </span>
               </label>
-              <select
-                id="country"
-                name="country"
-                value={selectedCountry}
-                onChange={(e) => handleCountryChange(e.target.value)}
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              >
-                {Object.keys(pppFactors).sort((a, b) => {
-                  // 确保中国始终排在第一位
-                  if (a === 'CN') return -1;
-                  if (b === 'CN') return 1;
-                  return new Intl.Collator(['zh', 'ja', 'en']).compare(getCountryName(a), getCountryName(b));
-                }).map(code => (
-                  <option key={code} value={code}>
-                    {getCountryName(code)} ({pppFactors[code].toFixed(2)})
-                  </option>
-                ))}
-              </select>
+              <div ref={countrySelectorRef} className="relative mt-1">
+                <button
+                  id="country"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded={isCountrySelectorOpen}
+                  onClick={() => setIsCountrySelectorOpen(prev => !prev)}
+                  className="flex w-full items-center justify-between gap-3 rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] px-3 py-2 text-left shadow-sm transition-colors hover:bg-[hsl(var(--muted))]/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:text-sm"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate font-medium text-[hsl(var(--foreground))]">
+                      {selectedCountryOption?.name || getCountryName(selectedCountry)}
+                    </span>
+                    <span className="mt-0.5 block truncate text-xs text-[hsl(var(--muted-foreground))]">
+                      {selectedCountry} · {getCurrencySymbol(selectedCountry)} · PPP {(pppFactors[selectedCountry] || 4.19).toFixed(2)}
+                    </span>
+                  </span>
+                  <ChevronDown className={`h-4 w-4 flex-shrink-0 text-[hsl(var(--muted-foreground))] transition-transform ${isCountrySelectorOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isCountrySelectorOpen && (
+                  <div className="absolute left-0 right-0 z-30 mt-2 overflow-hidden rounded-lg border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-xl">
+                    <div className="border-b border-[hsl(var(--border))] p-2">
+                      <div className="relative">
+                        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[hsl(var(--muted-foreground))]" />
+                        <input
+                          ref={countrySearchInputRef}
+                          type="text"
+                          value={countrySearchTerm}
+                          onChange={(event) => setCountrySearchTerm(event.target.value)}
+                          onKeyDown={handleCountrySearchKeyDown}
+                          placeholder={t('country_search_placeholder')}
+                          className="w-full rounded-md border border-[hsl(var(--border))] bg-[hsl(var(--background))] py-2 pl-9 pr-3 text-sm text-[hsl(var(--foreground))] outline-none transition-colors placeholder:text-[hsl(var(--muted-foreground))] focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
+                        />
+                      </div>
+                    </div>
+
+                    <div role="listbox" className="max-h-72 overflow-y-auto py-1">
+                      {filteredCountryOptions.length > 0 ? (
+                        filteredCountryOptions.map((option, index) => {
+                          const isSelected = option.code === selectedCountry;
+                          const isHighlighted = index === highlightedCountryIndex;
+
+                          return (
+                            <button
+                              key={option.code}
+                              type="button"
+                              role="option"
+                              aria-selected={isSelected}
+                              onMouseEnter={() => setHighlightedCountryIndex(index)}
+                              onClick={() => selectCountry(option.code)}
+                              className={`flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm transition-colors ${
+                                isHighlighted
+                                  ? 'bg-[hsl(var(--muted))] text-[hsl(var(--foreground))]'
+                                  : 'text-[hsl(var(--foreground))] hover:bg-[hsl(var(--muted))]/70'
+                              }`}
+                            >
+                              <span className="min-w-0">
+                                <span className="block truncate font-medium">{option.name}</span>
+                                <span className="block text-xs text-[hsl(var(--muted-foreground))]">
+                                  {option.code} · PPP {option.ppp.toFixed(2)}
+                                </span>
+                              </span>
+                              {isSelected && <Check className="h-4 w-4 flex-shrink-0 text-[hsl(var(--primary))]" />}
+                            </button>
+                          );
+                        })
+                      ) : (
+                        <div className="px-3 py-6 text-center text-sm text-[hsl(var(--muted-foreground))]">
+                          {t('country_search_no_results')}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
               <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                 {t('selected_ppp')}: {(pppFactors[selectedCountry] || 4.19).toFixed(2)}
               </p>
