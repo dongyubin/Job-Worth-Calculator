@@ -2,82 +2,20 @@ import '../globals.css'
 import { notFound } from 'next/navigation'
 import { LanguageProvider } from '@/components/calculator/LanguageContext'
 import { LangHtml } from '@/components/lang-html'
+import siteConfigData from '@/config/site.json'
 
 // 支持的语言列表 - 硬编码以避免在 Edge Runtime 中的导入问题
 const supportedLocales = ['zh', 'en', 'ja']
 
-// 动态获取站点配置
-async function getSiteConfig() {
-  try {
-    // 在服务端运行时使用 API 路由获取配置
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}` 
-      : process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3000' 
-        : 'https://jobworthcalculator.wwkejishe.top'
-    
-    const response = await fetch(`${baseUrl}/api/config/site`, {
-      next: { revalidate: 3600 } // 缓存1小时
-    })
-    
-    if (response.ok) {
-      return await response.json()
-    }
-  } catch (error) {
-    console.error('Failed to fetch site config:', error)
-  }
-  
-  // 回退配置
-  return {
-    locales: supportedLocales,
-    baseUrl: 'https://jobworthcalculator.wwkejishe.top',
-    branding: {
-      logo: 'Job Worth Calculator'
-    },
-    icons: {
-      favicon: '/favicon-16x16.ico',
-      icon: '/icon.png',
-      apple: '/apple-icon.png',
-      shortcut: '/favicon-16x16.png'
-    },
-    ads: {
-      google: {
-        enabled: true,
-        clientId: 'ca-pub-4173113313418612',
-        slots: {
-          banner: {
-            adSlot: '4089346212',
-            adFormat: 'auto',
-            fullWidthResponsive: true,
-            style: 'display:block'
-          }
-        }
-      }
-    },
-    metadata: {
-      zh: {
-        title: 'Job Worth Calculator - 这b班上得值不值·测算版，科学评估你的工作性价比',
-        description: '免费的工作价值计算器，科学评估你的工作性价比。',
-        keywords: ['工作价值计算器', '薪资计算器', '工作性价比']
-      },
-      en: {
-        title: 'Job Worth Calculator - Is My Job Worth the Grind? Scientifically Evaluate Your Job\'s Value',
-        description: 'Free job worth calculator to scientifically evaluate your job\'s cost-effectiveness.',
-        keywords: ['job worth calculator', 'salary calculator', 'job value']
-      },
-      ja: {
-        title: '仕事価値計算機 - この仕事、正気でやれる？ブラック度診断，あなたの仕事のコスパを科学的に評価',
-        description: '無料の仕事価値計算机で、あなたの仕事のコストパフォーマンスを科学的に評価します。',
-        keywords: ['仕事価値計算機', '給与計算機', '仕事コスパ']
-      }
-    }
-  }
+// Metadata runs during build, so read config locally instead of fetching our own API.
+function getSiteConfig() {
+  return siteConfigData
 }
 
 // 动态生成metadata
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  const siteConfig = await getSiteConfig()
+  const siteConfig = getSiteConfig()
   
   // 从配置文件获取支持的语言列表和metadata
   const { locales = supportedLocales, baseUrl, metadata } = siteConfig
